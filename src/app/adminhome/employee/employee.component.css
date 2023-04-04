@@ -1,0 +1,31 @@
+mat-toolbar{
+  background-color: rgb(70, 68, 68);
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.notification{
+  background: none;
+  color: black;
+}
+.search{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(110, 110, 110);
+  padding: 0px 5px;
+}
+#tablearea{
+  margin-top: 5px;
+}
+table th{
+  background-color:rgb(70, 68, 68);
+  color: white;
+}
+tr:nth-child(even){
+  background-color: aliceblue;
+}
+.mat-mdc-form-field{
+  font-size: 14px;
+  width: 100%;
+}
