@@ -1,5 +1,5 @@
 mat-toolbar{
-  background-color: rgb(70, 68, 68);
+  background-color: rgb(32,32,32);
   height: 40px;
   color: white;
   display: flex;
@@ -23,7 +23,7 @@ table th{
   color: white;
 }
 tr:nth-child(even){
-  background-color: aliceblue;
+  background-color: rgb(70,68,68);
 }
 .mat-mdc-form-field{
   font-size: 14px;
