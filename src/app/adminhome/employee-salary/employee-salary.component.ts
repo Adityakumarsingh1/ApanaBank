@@ -1,4 +1,19 @@
 import { Component } from '@angular/core';
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  amount: number;
+  date: number;
+  insentive:number;
+}
+
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, name: 'aman', amount: 123, date: 12-7-24, insentive: 700 },
+  {position: 2, name: 'golu', amount: 123, date: 12-7-24, insentive: 700 },
+  {position: 3, name: 'mayank', amount: 123, date: 12-7-24, insentive: 700 },
+  {position: 4, name: 'alok',  amount: 123, date: 12-7-24, insentive: 700 },
+]
 
 @Component({
   selector: 'app-employee-salary',
@@ -6,5 +21,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee-salary.component.css']
 })
 export class EmployeeSalaryComponent {
+  displayedColumns: string[] = ['position', 'name','amount','insentive','date','action'];
+  dataSource =  ELEMENT_DATA;
 
 }
