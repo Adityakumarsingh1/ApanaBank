@@ -28,6 +28,14 @@ import { DepositComponent } from './adminhome/deposit/deposit.component';
 import { WithdrawalComponent } from './adminhome/withdrawal/withdrawal.component';
 import {MatTableModule} from '@angular/material/table';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
+import { LoanRegistrationComponent } from './loan-registration/loan-registration.component';
+import { CreditScoreRegistrationComponent } from './credit-score-registration/credit-score-registration.component';
+import { DueRegistrationComponent } from './due-registration/due-registration.component';
+import { EmployeeSalaryRegistrationComponent } from './employee-salary-registration/employee-salary-registration.component';
+import { DepositRegistrationComponent } from './deposit-registration/deposit-registration.component';
+import { WithdrawalRegistrationComponent } from './withdrawal-registration/withdrawal-registration.component';
 
 
 
@@ -49,6 +57,14 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     DepositComponent,
     WithdrawalComponent,
     AdminLoginComponent,
+    CustomerRegistrationComponent,
+    EmployeeRegistrationComponent,
+    LoanRegistrationComponent,
+    CreditScoreRegistrationComponent,
+    DueRegistrationComponent,
+    EmployeeSalaryRegistrationComponent,
+    DepositRegistrationComponent,
+    WithdrawalRegistrationComponent,
   ],
   imports: [
     BrowserModule,

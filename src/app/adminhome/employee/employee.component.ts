@@ -1,13 +1,12 @@
-import { HttpClientJsonpModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { getMatIconFailedToSanitizeUrlError } from '@angular/material/icon';
-import { MatTableDataSource } from '@angular/material/table';
+import { Route, Router } from '@angular/router';
 export interface PeriodicElement {
   name: string;
   position: number;
   email_id: string;
   document: string;
   address:string;
+  
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -27,4 +26,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class EmployeeComponent {
   displayedColumns: string[] = ['position', 'name', 'email_id', 'address','document','action'];
   dataSource = ELEMENT_DATA;
-}
+
+
+  constructor(
+    private router:Router
+  )
+  {
+    
+  }
+  employeere(){
+    this.router.navigate(['/adminhome/employee_reg'])
+  }
+};
+

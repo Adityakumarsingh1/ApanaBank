@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -24,6 +25,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class DueComponent {
   displayedColumns: string[] = ['position', 'name','amount', 'due_date','action'];
   dataSource =  ELEMENT_DATA;
-
+constructor(
+  private router:Router
+)
+{
 
 }
+duere(){
+  this.router.navigate(['/adminhome/due_reg'])
+}
+};

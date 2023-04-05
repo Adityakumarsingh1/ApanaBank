@@ -4,12 +4,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-mdc-menu-content{
-    background-color:rgba(0, 0, 255, 0.692);
+    background-color:blue;
+    color: white;
 
 }
 .cdk-overlay-container{
     top:1px;
-    left:15px;
+    left:10px;
 
 }
 html, body { height: 100%; }

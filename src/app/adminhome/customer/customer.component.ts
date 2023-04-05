@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { CustomerRegistrationComponent } from 'src/app/customer-registration/customer-registration.component';
 
 export interface PeriodicElement {
   name: string;
@@ -22,5 +25,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent {
+  displayedColumns: string[] = ['position', 'name','email_id', 'document','action'];
+  dataSource =  ELEMENT_DATA;
+
+constructor(
+  private router:Router
+  )
+{
+
+
 
 }
+customerre(){
+  this.router.navigate(['/adminhome/customer_reg'])
+}
+};
+

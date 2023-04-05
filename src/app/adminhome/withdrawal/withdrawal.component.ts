@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -24,5 +25,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class WithdrawalComponent {
   displayedColumns: string[] = ['position', 'name','amount', 'date','action'];
   dataSource =  ELEMENT_DATA;
+constructor(
+  private router:Router
+)
+{
 
 }
+withdrawalre(){
+  this.router.navigate(['/adminhome/withdrawal_reg'])
+}
+};

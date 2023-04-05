@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -22,6 +23,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class DepositComponent {
   displayedColumns: string[] = ['position', 'name','amount','duration','date','action'];
   dataSource =  ELEMENT_DATA;
-
+constructor(
+  private router:Router
+)
+{
 
 }
+depositre(){
+  this.router.navigate(['/adminhome/deposite_reg'])
+}
+};

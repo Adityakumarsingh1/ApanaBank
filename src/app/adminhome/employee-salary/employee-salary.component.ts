@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -23,5 +24,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class EmployeeSalaryComponent {
   displayedColumns: string[] = ['position', 'name','amount','insentive','date','action'];
   dataSource =  ELEMENT_DATA;
+ constructor(
+  private router:Router
+ )
+ {
 
-}
+ }
+ empsalre(){
+  this.router.navigate(['/adminhome/employeesal_reg'])
+ }
+};
+
