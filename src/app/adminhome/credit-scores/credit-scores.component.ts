@@ -5,6 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './credit-scores.component.html',
   styleUrls: ['./credit-scores.component.css']
 })
-export class CreditScoresComponent {
-
+export class CreditScoresComponent { 
 }
