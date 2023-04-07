@@ -37,6 +37,7 @@ import { EmployeeSalaryRegistrationComponent } from './employee-salary-registrat
 import { DepositRegistrationComponent } from './deposit-registration/deposit-registration.component';
 import { WithdrawalRegistrationComponent } from './withdrawal-registration/withdrawal-registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSidenavModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
   providers: [],

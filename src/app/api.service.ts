@@ -12,7 +12,9 @@ export class ApiService {
 
   post_employeeRegistration(data:any){
     return this.http.post<any>('http://localhost/api/insert_emp.php',data)
-    
+  }
+  get_employee(){
+    return this.http.get<any>('http://localhost/api/view_emp.php')
   }
   
 }
