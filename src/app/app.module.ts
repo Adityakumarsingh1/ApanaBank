@@ -36,7 +36,7 @@ import { DueRegistrationComponent } from './due-registration/due-registration.co
 import { EmployeeSalaryRegistrationComponent } from './employee-salary-registration/employee-salary-registration.component';
 import { DepositRegistrationComponent } from './deposit-registration/deposit-registration.component';
 import { WithdrawalRegistrationComponent } from './withdrawal-registration/withdrawal-registration.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -80,6 +80,7 @@ import { WithdrawalRegistrationComponent } from './withdrawal-registration/withd
     MatInputModule,
     MatSidenavModule,
     MatTableModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
