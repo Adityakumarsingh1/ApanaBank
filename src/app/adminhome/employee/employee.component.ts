@@ -20,7 +20,7 @@ export interface PeriodicElement {
 
 export class EmployeeComponent implements OnInit{
   displayedColumns: string[] = ['position', 'name','email_id', 'document','action'];
-  dataSource = new MatTableDataSource();
+  dataSource = new MatTableDataSource()
   constructor(
     private router:Router,
     private servies:ApiService

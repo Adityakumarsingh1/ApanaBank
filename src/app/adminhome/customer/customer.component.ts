@@ -33,8 +33,6 @@ constructor(
   )
 {
 
-
-
 }
 customerre(){
   this.router.navigate(['/adminhome/customer_reg'])

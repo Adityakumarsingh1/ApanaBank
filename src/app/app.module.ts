@@ -38,6 +38,32 @@ import { DepositRegistrationComponent } from './deposit-registration/deposit-reg
 import { WithdrawalRegistrationComponent } from './withdrawal-registration/withdrawal-registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeehomeComponent } from './employeehome/employeehome.component';
+import {MatCardModule} from '@angular/material/card';
+import { EmpDashboardComponent } from './employeehome/emp-dashboard/emp-dashboard.component';
+import { EmpCustomerComponent } from './employeehome/emp-customer/emp-customer.component';
+import { EmpLoanComponent } from './employeehome/emp-loan/emp-loan.component';
+import { EmpCreditScoreComponent } from './employeehome/emp-credit-score/emp-credit-score.component';
+import { EmpDueComponent } from './employeehome/emp-due/emp-due.component';
+import { EmpDepositComponent } from './employeehome/emp-deposit/emp-deposit.component';
+import { EmpWithdrawalComponent } from './employeehome/emp-withdrawal/emp-withdrawal.component';
+import { CustomerhomeComponent } from './customerhome/customerhome.component';
+import { CustDashboardComponent } from './customerhome/cust-dashboard/cust-dashboard.component';
+import { CustLoanComponent } from './customerhome/cust-loan/cust-loan.component';
+import { CustDueComponent } from './customerhome/cust-due/cust-due.component';
+import { CustDepositComponent } from './customerhome/cust-deposit/cust-deposit.component';
+import { CustWithdrawalComponent } from './customerhome/cust-withdrawal/cust-withdrawal.component';
+import { EmpCustomerRegComponent } from './employeree-reg/emp-customer-reg/emp-customer-reg.component';
+import { EmpCreditScoreRegComponent } from './employeree-reg/emp-credit-score-reg/emp-credit-score-reg.component';
+import { EmpDepositRegComponent } from './employeree-reg/emp-deposit-reg/emp-deposit-reg.component';
+import { EmpDueRegComponent } from './employeree-reg/emp-due-reg/emp-due-reg.component';
+import { EmpLoanRegComponent } from './employeree-reg/emp-loan-reg/emp-loan-reg.component';
+import { EmpWithdrawalRegComponent } from './employeree-reg/emp-withdrawal-reg/emp-withdrawal-reg.component';
+import { CustLoanRegComponent } from './customer-reg/cust-loan-reg/cust-loan-reg.component';
+import { CustDueRegComponent } from './customer-reg/cust-due-reg/cust-due-reg.component';
+import { CustDepositRegComponent } from './customer-reg/cust-deposit-reg/cust-deposit-reg.component';
+import { CustWithdrawalRegComponent } from './customer-reg/cust-withdrawal-reg/cust-withdrawal-reg.component';
+
 
 
 @NgModule({
@@ -66,6 +92,31 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeeSalaryRegistrationComponent,
     DepositRegistrationComponent,
     WithdrawalRegistrationComponent,
+    EmployeehomeComponent,
+    EmpDashboardComponent,
+    EmpCustomerComponent,
+    EmpLoanComponent,
+    EmpCreditScoreComponent,
+    EmpDueComponent,
+    EmpDepositComponent,
+    EmpWithdrawalComponent,
+    CustomerhomeComponent,
+    CustDashboardComponent,
+    CustLoanComponent,
+    CustDueComponent,
+    CustDepositComponent,
+    CustWithdrawalComponent,
+    EmpCustomerRegComponent,
+    EmpCreditScoreRegComponent,
+    EmpDepositRegComponent,
+    EmpDueRegComponent,
+    EmpLoanRegComponent,
+    EmpWithdrawalRegComponent,
+    CustLoanRegComponent,
+    CustDueRegComponent,
+    CustDepositRegComponent,
+    CustWithdrawalRegComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -82,7 +133,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatTableModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
     
   ],
   providers: [],
