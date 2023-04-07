@@ -3,21 +3,27 @@
     <span>Employee Registration</span>
     <mat-icon (click)="emp()" >cancel icon</mat-icon>
   </mat-toolbar>
-
-  <form [formGroup]="emp_form">
+  
+   <form [formGroup]="emp_form">
     <mat-form-field appearance="fill">
       <mat-label>Name*</mat-label>
       <input matInput placeholder="Name">
 
     </mat-form-field>
+<!-- 
     <mat-form-field appearance="fill">
         <mat-label>Emp_id*</mat-label>
         <input matInput placeholder="Emp_id*">
 
+      <!-- </mat-form-field> -->
+      <mat-form-field appearance="fill">
+        <mat-label>father_name</mat-label>
+        <input formControlName="father_name" matInput placeholder="Father name">
+
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Father name</mat-label>
-        <input matInput placeholder="Father name">
+        <mat-label>Phone no*</mat-label>
+        <input matInput placeholder="Phone no*">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
@@ -84,8 +90,9 @@
         <mat-label>Document upload*</mat-label>
         <input matInput placeholder="Document upload*">
       </mat-form-field>
-     
+      <input formControlName="admin_id_fk" readonly hidden>
+     </form>
+
       <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-    </form>
+      <button mat-raised-button color="accent"(click)="onsubmit()">Submit</button>
    

@@ -36,6 +36,8 @@ import { DueRegistrationComponent } from './due-registration/due-registration.co
 import { EmployeeSalaryRegistrationComponent } from './employee-salary-registration/employee-salary-registration.component';
 import { DepositRegistrationComponent } from './deposit-registration/deposit-registration.component';
 import { WithdrawalRegistrationComponent } from './withdrawal-registration/withdrawal-registration.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { MatCardModule} from '@angular/material/card';
 import { EmpDashboardComponent } from './employeehome/emp-dashboard/emp-dashboard.component';
@@ -63,7 +65,6 @@ import { CustDepositRegComponent } from './customer-reg/cust-deposit-reg/cust-de
 import { CustWithdrawalRegComponent } from './customer-reg/cust-withdrawal-reg/cust-withdrawal-reg.component';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import {MatSelectModule} from '@angular/material/select';
-
 
 
 @NgModule({
@@ -132,9 +133,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSidenavModule,
     MatTableModule,
-    MatCardModule,
     ReactiveFormsModule,
-    MatSelectModule
+    HttpClientModule,
     
   ],
   providers: [],
