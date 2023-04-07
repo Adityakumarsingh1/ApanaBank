@@ -24,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class EmployeeComponent {
-  displayedColumns: string[] = ['position', 'name', 'email_id', 'address','document','action'];
+  displayedColumns: string[] = ['position', 'name', 'email id', 'address','document','action'];
   dataSource = ELEMENT_DATA;
 
 

@@ -1,0 +1,69 @@
+<mat-toolbar>
+    <span>Loan Details</span>
+    <mat-icon (click)="loanre()">add_circle</mat-icon>
+  </mat-toolbar>
+  <mat-toolbar class="notification">
+    <span>Total : 0</span>
+    <input type="text" class="search" placeholder="Search">
+  </mat-toolbar>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> SN. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- Loan_no Column -->
+      <ng-container matColumnDef="loan_no">
+        <th mat-header-cell *matHeaderCellDef> Loan no </th>
+        <td mat-cell *matCellDef="let element"> {{element.loan_no}} </td>
+      </ng-container>
+  
+         <!-- Loan amount Column -->
+      <ng-container matColumnDef="loan_amount">
+        <th mat-header-cell *matHeaderCellDef> Loan amount </th>
+        <td mat-cell *matCellDef="let element"> {{element.loan_amount}} </td>
+      </ng-container>
+  
+      <!-- Loan_period Column -->
+      <ng-container matColumnDef="time_period">
+        <th mat-header-cell *matHeaderCellDef> Time period </th>
+        <td mat-cell *matCellDef="let element"> {{element.time_period}} </td>
+      </ng-container>
+
+      
+      <!-- percentage Column -->
+      <ng-container matColumnDef="percentage">
+        <th mat-header-cell *matHeaderCellDef> Percentage </th>
+        <td mat-cell *matCellDef="let element"> {{element.percentage}} </td>
+      </ng-container>
+  
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element"> {{element.action}} </td>
+      </ng-container>
+  
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator> -->
+  </div>
+  
+
+

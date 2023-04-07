@@ -7,7 +7,6 @@ import { Route, Router, Routes } from '@angular/router';
   styleUrls: ['./customer-registration.component.css']
 })
 export class CustomerRegistrationComponent {
-  
   constructor(
     private router:Router
   )
