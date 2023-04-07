@@ -1,0 +1,29 @@
+mat-toolbar{
+    background-color: rgb(32,32,32);
+    height: 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+div{
+    margin-top: 30px;
+    float: left;
+  }
+mat-form-field{
+    width: 20.3%;
+    margin-left: 50px;
+     right: 20%;
+    float: left;
+  }
+  button{
+ left: -25%;
+ margin-left: 10px;
+ top: 40vh
+
+  }
+
+
+
+
+  
