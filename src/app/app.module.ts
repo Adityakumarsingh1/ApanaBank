@@ -36,7 +36,6 @@ import { DueRegistrationComponent } from './due-registration/due-registration.co
 import { EmployeeSalaryRegistrationComponent } from './employee-salary-registration/employee-salary-registration.component';
 import { DepositRegistrationComponent } from './deposit-registration/deposit-registration.component';
 import { WithdrawalRegistrationComponent } from './withdrawal-registration/withdrawal-registration.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { MatCardModule} from '@angular/material/card';
@@ -135,6 +134,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatTableModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatCardModule
     
   ],
   providers: [],
