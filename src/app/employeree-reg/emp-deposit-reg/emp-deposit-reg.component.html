@@ -3,8 +3,7 @@
     <span>Deposite Registration</span>
     <mat-icon (click)="dep()">cancel icon</mat-icon>
   </mat-toolbar>
-  
-  <div class="box">
+ <form>
     <mat-form-field appearance="fill">
       <mat-label>Dep_id*</mat-label>
       <input matInput placeholder="Dep_id">
@@ -29,10 +28,11 @@
         <mat-label>Total Amount*</mat-label>
         <input matInput placeholder="Total Amount*">
       </mat-form-field>
-      </div>
+    </form>>
+    <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;">Submit</button>
+   </span>
 
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-   
 
 

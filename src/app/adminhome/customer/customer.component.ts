@@ -1,41 +1,60 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { CustomerRegistrationComponent } from 'src/app/customer-registration/customer-registration.component';
+import { ApiService } from 'src/app/api.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  email_id: string;
-  document: string;
-  address:string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'aman', email_id: 'aman@123', address:'hajipur', document: 'addhar'},
-  {position: 2, name: 'golu', email_id: 'golu@123', address:'hajipur', document: 'addhar'},
-  {position: 3, name: 'mayank', email_id: 'mayank@123', address:'hajipur', document:'addhar'},
-  {position: 4, name: 'alok', email_id: 'alok@123', address:'hajipur',document: 'addhar'},
- 
-];
 
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
-export class CustomerComponent {
-  displayedColumns: string[] = ['position', 'name','email_id', 'document','action'];
-  dataSource =  ELEMENT_DATA;
+export class CustomerComponent  implements OnInit{
+  displayedColumns: string[] = ['cust_id', 'name','cust_email', 'cust_phoneno',];
+  dataSource =  new MatTableDataSource()
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  total_count:any;
+
 
 constructor(
-  private router:Router
+  private router:Router,
+  private servie:ApiService
   )
 {
 
 }
+  ngOnInit(): void {
+    this.servie.get_cust().subscribe(
+      (res:any)=>{
+
+        this.servie.get_cust().subscribe(
+          (res:any)=>{
+            this.dataSource.data = res.data
+            this.total_count = res.data.length;
+            console.log(res.data)
+          }
+        )
+        this.dataSource = new MatTableDataSource();
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator
+      }
+    )
+  }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 customerre(){
   this.router.navigate(['/adminhome/customer_reg'])
 }
+
 };
 

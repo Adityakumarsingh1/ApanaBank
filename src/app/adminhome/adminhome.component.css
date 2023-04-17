@@ -35,6 +35,8 @@ div{
     background-color:rgba(0, 0, 0, 0.901);
     border-color: white;
     color: white;
+    cursor:pointer;
+
 }
 span{
     padding-left: 5px;

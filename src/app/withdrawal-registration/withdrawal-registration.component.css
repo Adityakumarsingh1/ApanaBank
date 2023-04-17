@@ -16,10 +16,9 @@ mat-form-field{
     float: left;
   }
   button{
- left: -25%;
- margin-left: 20px;
- top: 300px
-
+ left: -35%;
+ margin-left: 10px;
+ top: 50vh
   }
 
 

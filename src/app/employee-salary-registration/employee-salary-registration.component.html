@@ -1,38 +1,46 @@
 
 <mat-toolbar>
     <span>Employee salary Registration</span>
-    <mat-icon (click)="Esal()">cancel icon</mat-icon>
+    <mat-icon (click)="salary()">cancel icon</mat-icon>
   </mat-toolbar>
   
-  <div class="box">
-    <mat-form-field appearance="fill">
+  <form [formGroup]="employeesalary_form">
+    <!-- <mat-form-field appearance="fill">
       <mat-label>Emp_id</mat-label>
-      <input matInput placeholder="Emp_id">
+      <input formControlName="emp_sal_id" matInput placeholder="Emp_id">
 
-    </mat-form-field>
+    </mat-form-field> -->
+
     <mat-form-field appearance="fill">
-        <mat-label>Emp_salary</mat-label>
-        <input matInput placeholder="Emp_salary">
+      <mat-label>Name</mat-label>
+      <input formControlName="emp_name" matInput placeholder="Name">
+      </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>salary</mat-label>
+        <input formControlName="emp_salary_amount" matInput placeholder="salary">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Date</mat-label>
-        <input matInput placeholder="Date">
+        <input formControlName="sal_date" matInput placeholder="Date">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Incentive</mat-label>
-        <input matInput placeholder="Incentive">
+        <input formControlName="insentive"  matInput placeholder="Incentive">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Expense</mat-label>
-        <input matInput placeholder="Expense">
+        <input formControlName="emp_expence" matInput placeholder="Expense">
       </mat-form-field>
-      
-      </div>
+      <input formControlName="admin_id_fk" readonly hidden>
+    </form>
 
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-   
+     <span>
+        <button mat-raised-button style="background: red;">Reset</button>
+        <button mat-raised-button style="background: green;"(click)="onsubmit()">Submit</button>
+     </span>
 

@@ -4,24 +4,31 @@
     <mat-icon (click)="due()">cancel icon</mat-icon>
   </mat-toolbar>
   
-  <div class="box">
+  <form>
     <mat-form-field appearance="fill">
-      <mat-label>Emp-id*</mat-label>
+      <mat-label>Emp id*</mat-label>
       <input matInput placeholder="Emp-id">
-
     </mat-form-field>
+
     <mat-form-field appearance="fill">
-        <mat-label>Date*</mat-label>
-        <input matInput placeholder="Date*">
+      <mat-label>name</mat-label>
+      <input matInput placeholder="name"> 
+      </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Date</mat-label>
+        <input matInput placeholder="Date">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Amount</mat-label>
         <input matInput placeholder="Amount">
       </mat-form-field>
-  </div>
+    </form>
 
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-  
+  <span>
+    <button mat-raised-button style="background: red;">Reset</button>
+    <button mat-raised-button style="background: green;">Submit</button>
+ </span>
+
 

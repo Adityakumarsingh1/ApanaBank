@@ -4,10 +4,15 @@
     <mat-icon (click)="with()">cancel icon</mat-icon>
   </mat-toolbar>
   
-  <div class="box">
+  <form>
     <mat-form-field appearance="fill">
-      <mat-label>With_id*</mat-label>
-      <input matInput placeholder="With_id*">
+      <mat-label>With id</mat-label>
+      <input matInput placeholder="With id*">
+
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>with name</mat-label>
+        <input matInput placeholder="name">
 
     </mat-form-field>
     <mat-form-field appearance="fill">
@@ -19,10 +24,10 @@
         <mat-label>Amaount</mat-label>
         <input matInput placeholder="Amount">
       </mat-form-field>
-      </div>
-
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-   
+    </form>
+   <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;">Submit</button>
+   </span>
 
 

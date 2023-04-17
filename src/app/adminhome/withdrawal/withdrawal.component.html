@@ -3,29 +3,29 @@
     <mat-icon (click)="withdrawalre()">add_circle</mat-icon>
   </mat-toolbar>
   <mat-toolbar class="notification">
-    <span>Total : 0</span>
-    <input type="text" class="search" placeholder="Search">
+    <span class="notice_text">Total : {{total_count}}</span>
+    <input type="text" placeholder="Search" class="search" matInput (keyup)="applyFilter($event)" #input>
   </mat-toolbar>
   
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
   
       <!-- Position Column -->
-      <ng-container matColumnDef="position">
+      <ng-container matColumnDef="with_id">
         <th mat-header-cell *matHeaderCellDef> SN. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.with_id}} </td>
       </ng-container>
   
       <!-- Name Column -->
-      <ng-container matColumnDef="name">
+      <ng-container matColumnDef="with_name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.with_name}} </td>
       </ng-container>
   
       <!-- Amount Column -->
-      <ng-container matColumnDef="amount">
+      <ng-container matColumnDef="with_amount">
         <th mat-header-cell *matHeaderCellDef> Amount </th>
-        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.with_amount}} </td>
       </ng-container>
   
          <!-- Date Column -->
@@ -45,7 +45,8 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
     <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
                    showFirstLastButtons
                    aria-label="Select page of periodic elements">

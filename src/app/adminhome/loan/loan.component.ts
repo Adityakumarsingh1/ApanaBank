@@ -1,40 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Action } from 'rxjs/internal/scheduler/Action';
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  loan_no: number;
-  loan_amount: number;
-  time_period:number;
-  percentage:number;
-  action:string;
+import { ApiService } from 'src/app/api.service';
 
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'aman', loan_no: 123,loan_amount: 70000, time_period: 120, percentage: 12 ,action:'edit'},
-  {position: 2, name: 'golu',loan_no: 123,loan_amount: 70000, time_period: 120, percentage: 12 , action:'edit' },
-  {position: 3, name: 'mayank',loan_no: 123,loan_amount: 70000, time_period: 120, percentage: 12,action:'edit' },
-  {position: 4, name: 'alok', loan_no: 123,loan_amount: 70000, time_period: 120, percentage: 12,action:'edit'  },
-];
 
 @Component({
   selector: 'app-loan',
   templateUrl: './loan.component.html',
   styleUrls: ['./loan.component.css']
 })
-export class LoanComponent {
-  displayedColumns: string[] = ['position', 'name', 'loan_no', 'loan_amount','time_period','percentage','action'];
-  dataSource = ELEMENT_DATA;
-
+export class LoanComponent  implements OnInit{
+  displayedColumns: string[] = ['loan_id', 'loan_name', 'loan_no', 'loan_installment','loan_date',];
+  dataSource = new MatTableDataSource()
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  total_count:any;
 
   constructor(
-    private router:Router
+    private router:Router,
+    private servie:ApiService
   )
-  {
+  {}
 
+  ngOnInit(): void {
+    this.servie.get_loan().subscribe(
+      (res:any)=>{
+        console.log(res)
+        this.dataSource.data=res.data
+        this.total_count = res.data.length;
+      }
+    )
+    this.dataSource = new MatTableDataSource();
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator
+  
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+  
   loanre(){
     this.router.navigate(['/adminhome/loan_reg'])
   }

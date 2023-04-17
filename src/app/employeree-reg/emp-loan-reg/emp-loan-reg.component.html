@@ -3,7 +3,7 @@
   <span>Loan Registration</span>
   <mat-icon (click)="loan()">cancel icon</mat-icon>
 </mat-toolbar>
-<div>
+<form>
   <mat-form-field appearance="fill">
     <mat-label>Name*</mat-label>
     <input matInput placeholder="Name">
@@ -43,8 +43,9 @@
       <mat-label>Install*</mat-label>
       <input matInput placeholder="Install*">
     </mat-form-field>
-  </div>  
+  </form>>  
 
-    <button mat-raised-button color="accent">Reset</button>
-    <button mat-raised-button color="accent">Submit</button>
-  
+  <span>
+    <button mat-raised-button style="background: red;">Reset</button>
+    <button mat-raised-button style="background: green;">Submit</button>
+ </span>

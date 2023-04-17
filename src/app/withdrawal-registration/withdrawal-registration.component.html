@@ -4,24 +4,28 @@
     <mat-icon (click)="with()">cancel icon</mat-icon>
   </mat-toolbar>
   
-  <div class="box">
+  <form [formGroup]="with_form">
     <mat-form-field appearance="fill">
-      <mat-label>With id</mat-label>
-      <input matInput placeholder="With id">
-
+      <mat-label>Name</mat-label>
+      <input formControlName="with_name" matInput placeholder="Name ">
     </mat-form-field>
+
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input formControlName="with_date" matInput placeholder="Date">
+  </mat-form-field>
+
     <mat-form-field appearance="fill">
-        <mat-label>Date</mat-label>
-        <input matInput placeholder="Date">
+        <mat-label>Amount</mat-label>
+        <input formControlName="with_amount" matInput placeholder="Amount">
 
       </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Amaount</mat-label>
-        <input matInput placeholder="Amount">
-      </mat-form-field>
-      </div>
-
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-   
+      <input formControlName="emp_id_fk" readonly hidden>
+      <input formControlName="admin_id_fk" readonly hidden>
+    </form>
+  <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;" (click)="onsubmit()">Submit</button>
+   </span>
 

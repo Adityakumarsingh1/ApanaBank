@@ -3,34 +3,39 @@
     <span>Credit Score Registration</span>
     <mat-icon (click)="cred()">cancel icon</mat-icon>
   </mat-toolbar>
-  <div class="box">
-    <mat-form-field appearance="fill">
-        <mat-label>Credit score id</mat-label>
-        <input matInput placeholder="Credit score_id*">
+ 
+  <form [formGroup]="cred_form">
+ <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input formControlName="cred_id" matInput placeholder="Name">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Score</mat-label>
-        <input matInput placeholder="Score*">
+        <input formControlName="cred_score" matInput placeholder="Score">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Offer</mat-label>
-        <input matInput placeholder="Offer*">
+        <input formControlName="cred_offer" matInput placeholder="Offer">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Amount</mat-label>
-        <input matInput placeholder="Amount*"
+        <input formControlName="cred_amount" matInput placeholder="Amount"
         >
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Length History</mat-label>
-        <input matInput placeholder="Length History*">
+        <mat-label>History</mat-label>
+        <input formControlName="cred_lenth_history" matInput placeholder=" History">
       </mat-form-field>
-    </div>
+      <input formControlName="emp_id_fk" readonly hidden>
+      <input formControlName="admin_id_fk" readonly hidden>
+    </form>
 
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
+    <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;" (click)="onsubmit()">Submit</button>
+    </span>
    
 

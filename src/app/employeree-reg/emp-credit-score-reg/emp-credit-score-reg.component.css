@@ -16,11 +16,18 @@ mat-form-field{
     float: left;
   }
   button{
-    left: 45%;
+    left: 19%;
     margin-left: 5px;
-    top: 60px
-   
+    top: 45vh
      }
+     
+  @media(min-width: 1020px) and (max-width: 1920px){
+    button{
+      left: 19%;
+      margin-left: 5px;
+      top: 45vh
+       }
+    }  
 
 
 

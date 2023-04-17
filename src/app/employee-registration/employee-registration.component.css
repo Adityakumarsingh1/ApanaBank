@@ -5,9 +5,27 @@ mat-toolbar{
     display: flex;
     justify-content: space-between;
   }
+  .img_style>button{
+    position: relative;
+    top: -70px;
+    left: 115px;
+  }
+ .img_style input{
+     display: none;
+ }
+  .img_style>img{
+     border-radius: 100%;
+  }
+  .img_style{
+    width: 150px;
+    height: 150px;
+    border: 5px solid blue;
+    border-radius: 100px;
+    margin: 0 auto 20px;
+ }
 
-form{
-    margin-top: 30px;
+div{
+    margin-top: 40px;
     float: left;
   }
 mat-form-field{
@@ -16,11 +34,21 @@ mat-form-field{
     float: left;
   }
   button{
- right: 45%;
- margin-left: 0px;
- top: 60vh
-
+  right: 40%;
+  top: 320px;
+  margin: 5px;
   }
+
+  @media(min-width: 1020px) and (max-width: 1920px){
+  button{
+  right: 40%;
+  top: 320px;
+  margin: 5px;
+  }
+  
+    
+  }
+
 
 
 

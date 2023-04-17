@@ -3,7 +3,7 @@
     <span>Credit Score Registration</span>
     <mat-icon (click)="cred()">cancel icon</mat-icon>
   </mat-toolbar>
-  <div class="box">
+  <form>
     <mat-form-field appearance="fill">
         <mat-label>Credit score_id*</mat-label>
         <input matInput placeholder="Credit score_id*">
@@ -28,9 +28,8 @@
         <mat-label>Length History*</mat-label>
         <input matInput placeholder="Length History*">
       </mat-form-field>
-    </div>
-
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-   
-
+    </form>
+    <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;">Submit</button>
+   </span>

@@ -4,10 +4,19 @@
     <mat-icon (click)="emp()" >cancel icon</mat-icon>
   </mat-toolbar>
   
-   <form [formGroup]="emp_form">
+  
+  <div class="img_style">
+    <img [src]="img_url" width="100%" height="100%">
+     <button mat-fab color="primary" (click)="image.click()">
+        <mat-icon class="pic_add_icon">add</mat-icon>
+        <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
+      </button>
+</div>
+   <form [formGroup]="add_emp">
+
     <mat-form-field appearance="fill">
-      <mat-label>Name*</mat-label>
-      <input matInput placeholder="Name">
+      <mat-label>Name</mat-label>
+      <input formControlName="emp_name" matInput placeholder="Name">
 
     </mat-form-field>
 <!-- 
@@ -15,84 +24,76 @@
         <mat-label>Emp_id*</mat-label>
         <input matInput placeholder="Emp_id*">
 
-      <!-- </mat-form-field> -->
+       </mat-form-field> -->
       <mat-form-field appearance="fill">
-        <mat-label>father_name</mat-label>
+        <mat-label>father name</mat-label>
         <input formControlName="father_name" matInput placeholder="Father name">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Phone no*</mat-label>
-        <input matInput placeholder="Phone no*">
+        <mat-label>Phone no</mat-label>
+        <input formControlName="phoneno" matInput placeholder="Phone no">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Phone no*</mat-label>
-        <input matInput placeholder="Phone no*">
-
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Email_id*</mat-label>
-        <input matInput placeholder="Email_id*"
+        <mat-label>Email</mat-label>
+        <input formControlName="emp_email" matInput placeholder="Email"
         >
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Password*</mat-label>
-        <input matInput placeholder="Password*">
+        <mat-label>village</mat-label>
+        <input formControlName="village" matInput placeholder="village">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Village*</mat-label>
-        <input matInput placeholder="Village">
+        <mat-label>post</mat-label>
+        <input formControlName="post" matInput placeholder="post">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Post*</mat-label>
-        <input matInput placeholder="Post*">
+        <mat-label>District</mat-label>
+        <input formControlName="district" matInput placeholder="District">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>District*</mat-label>
-        <input matInput placeholder="District*">
+        <mat-label>State</mat-label>
+        <input formControlName="state" matInput placeholder="State">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>State*</mat-label>
-        <input matInput placeholder="State*">
+        <mat-label>Pin</mat-label>
+        <input formControlName="pin" matInput placeholder="Pin">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Pin*</mat-label>
-        <input matInput placeholder="Pin*">
+        <mat-label>Signature</mat-label>
+        <input formControlName="signature" matInput placeholder="Signature">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Signature*</mat-label>
-        <input matInput placeholder="Signature*">
+        <mat-label>Document type</mat-label>
+        <input formControlName="document_type" matInput placeholder="Document type">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Photo*</mat-label>
-        <input matInput placeholder="Photo*">
+        <mat-label>Document no</mat-label>
+        <input formControlName="documentno" matInput placeholder="Document no">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Document type*</mat-label>
-        <input matInput placeholder="Document type*">
+        <mat-label>Document upload</mat-label>
+        <input formControlName="document_upload" matInput placeholder="Document upload">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Document no*</mat-label>
-        <input matInput placeholder="Document no*">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Document upload*</mat-label>
-        <input matInput placeholder="Document upload*">
-      </mat-form-field>
+        <mat-label>Password</mat-label>
+        <input formControlName="emp_password" matInput placeholder="Password">
+         </mat-form-field>
+         
       <input formControlName="admin_id_fk" readonly hidden>
-     </form>
+    </form>
 
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent"(click)="onsubmit()">Submit</button>
-   
+    <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;" (click)="onsubmit()">Submit</button>
+    </span>

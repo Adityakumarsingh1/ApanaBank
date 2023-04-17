@@ -3,25 +3,36 @@
     <span>Due  Registration</span>
     <mat-icon (click)="due()">cancel icon</mat-icon>
   </mat-toolbar>
-  
-  <div class="box">
-    <mat-form-field appearance="fill">
-      <mat-label>Emp id</mat-label>
-      <input matInput placeholder="Emp-id">
 
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Date</mat-label>
-        <input matInput placeholder="Date">
 
+  <form [formGroup]="due_form">
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Due id</mat-label>
+      <input formControlName="due_id" matInput placeholder="Emp-id">
+    </mat-form-field>  -->
+
+     <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input formControlName="due_name" matInput placeholder="Name">
       </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Date</mat-label>
+        <input formControlName="due_date" matInput placeholder="Date">
+      </mat-form-field>
+
       <mat-form-field appearance="fill">
         <mat-label>Amount</mat-label>
-        <input matInput placeholder="Amount">
+        <input formControlName="due_amount" matInput placeholder="Amount">
       </mat-form-field>
-  </div>
+      
+        <input formControlName="cust_id_fk" readonly hidden>
+        <input formControlName="emp_id_fk" readonly hidden>
+        <input formControlName="admin_id_fk" readonly hidden>
+      
+    </form>
 
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-  
-
+    <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;"(click)="onsubmit">Submit</button>
+    </span>

@@ -38,6 +38,7 @@ import { DepositRegistrationComponent } from './deposit-registration/deposit-reg
 import { WithdrawalRegistrationComponent } from './withdrawal-registration/withdrawal-registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
+import { MatCardModule} from '@angular/material/card';
 import { EmpDashboardComponent } from './employeehome/emp-dashboard/emp-dashboard.component';
 import { EmpCustomerComponent } from './employeehome/emp-customer/emp-customer.component';
 import { EmpLoanComponent } from './employeehome/emp-loan/emp-loan.component';
@@ -61,8 +62,8 @@ import { CustLoanRegComponent } from './customer-reg/cust-loan-reg/cust-loan-reg
 import { CustDueRegComponent } from './customer-reg/cust-due-reg/cust-due-reg.component';
 import { CustDepositRegComponent } from './customer-reg/cust-deposit-reg/cust-deposit-reg.component';
 import { CustWithdrawalRegComponent } from './customer-reg/cust-withdrawal-reg/cust-withdrawal-reg.component';
-import { ReactiveFormsModule } from '@angular/forms'; 
-import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -133,8 +134,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatTableModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatCardModule
-    
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

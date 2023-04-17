@@ -4,34 +4,28 @@
     <mat-icon (click)="dep()">cancel icon</mat-icon>
   </mat-toolbar>
   
-  <div class="box">
+  <form [formGroup]="dep_form">
     <mat-form-field appearance="fill">
-      <mat-label>Dep id</mat-label>
-      <input matInput placeholder="Dep_id">
+      <mat-label>Name</mat-label>
+      <input formControlName="dep_name" matInput placeholder="Name">
 
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Date</mat-label>
-        <input matInput placeholder="Date">
+        <input formControlName="dep_date" matInput placeholder="Date">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Amount</mat-label>
-        <input matInput placeholder="Amount">
+        <input formControlName="dep_amount" matInput placeholder="Amount">
 
       </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Interest</mat-label>
-        <input matInput placeholder="Interest">
+      <input formControlName="emp_id_fk" readonly hidden>
+      <input formControlName="admin_id_fk" readonly hidden>
+    </form>
+    <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;"(click)="onsubmit()">Submit</button>
+   </span>
 
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Total Amount</mat-label>
-        <input matInput placeholder="Total Amount">
-      </mat-form-field>
-      </div>
-
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-   
 

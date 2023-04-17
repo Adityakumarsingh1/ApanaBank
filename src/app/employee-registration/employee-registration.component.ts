@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -9,20 +9,38 @@ import { ApiService } from '../api.service';
   styleUrls: ['./employee-registration.component.css']
 })
 export class EmployeeRegistrationComponent implements OnInit {
-  emp_form: any;
+  hide=true;
+  
+  eid:number=0;
+  employee_registration: any;
+  img_local_url ='http://localhost/upload/';
+  img_url:any = this.img_local_url+'logo.png';
+  selected_img:any;
+  add_emp!:FormGroup;
+ 
+
   constructor(
      private fb: FormBuilder,
     private router:Router,
-    private servi:ApiService
-  )
+    private api:ApiService,
+    private url : ActivatedRoute
+  ){}
   
-  {
-
-  }
+ 
   ngOnInit():void {
-    this.emp_form = this.fb.group({
+    this.eid = this.url.snapshot.params['id'];
+    if (this.eid) {
+      this.api.get_single_employe(this.eid).subscribe(
+        (res: any) => {
+          this.add_emp.patchValue(res.data);
+          this.img_url =(res.data['emp_img'])? this.img_local_url+res.data['emp_img']:this.img_local_url+'logo.png';
+          console.log(res.data)
+        }
+      )
+    }
+    this.add_emp = this.fb.group({
       emp_name:['', Validators.required],
-      //  emp_id:[''],
+       emp_id:[''],
        father_name:[''],
        phoneno:['',Validators.required],
        emp_email:['',Validators.required],
@@ -32,62 +50,53 @@ export class EmployeeRegistrationComponent implements OnInit {
        state:[''],
        pin:[''],
        signature:[''],
-       photo:[''],
+       emp_img:[''],
        document_type:[''],
        documentno:['',Validators.required],
        document_upload:['',Validators.required],
        emp_password:['',Validators.required],
-       admin_id_fk:['']
-       
-
+       admin_id_fk:[1]
     })
   
   }
 
   onsubmit(){
-    console.log(this.emp_form.get('emp_name')?.value)
-    console.log(this.emp_form.get('father_name')?.value)
-    console.log(this.emp_form.get('phoneno')?.value)
-    console.log(this.emp_form.get('emp_email')?.value)
-    console.log(this.emp_form.get('village')?.value)
-    console.log(this.emp_form.get('post')?.value)
-    console.log(this.emp_form.get('district')?.value)
-    console.log(this.emp_form.get('state')?.value)
-    console.log(this.emp_form.get('pin')?.value)
-    console.log(this.emp_form.get('signature')?.value)
-    console.log(this.emp_form.get('photo')?.value)
-    console.log(this.emp_form.get('document_type')?.value)
-    console.log(this.emp_form.get('documentno')?.value)
-    console.log(this.emp_form.get('document_upload')?.value)
-    console.log(this.emp_form.get('emp_password')?.value)
-    console.log(this.emp_form.get('admin_id_fk')?.value)
+    const empformdata =  new FormData();
+  empformdata.append('emp_name', this.add_emp.get('emp_name')?.value)
+  empformdata.append('father_name', this.add_emp.get('father_name')?.value)
+  empformdata.append('phoneno', this.add_emp.get('phoneno')?.value)
+  empformdata.append('emp_email', this.add_emp.get('emp_email')?.value)
+  empformdata.append('village', this.add_emp.get('village')?.value)
+  empformdata.append('post', this.add_emp.get('post')?.value)
+  empformdata.append('district', this.add_emp.get('district')?.value)
+  empformdata.append('state', this.add_emp.get('state')?.value)
+  empformdata.append('pin', this.add_emp.get('pin')?.value)
+  empformdata.append('signature', this.add_emp.get('signature')?.value)
+  empformdata.append('document_type', this.add_emp.get('document_type')?.value)
+  empformdata.append('documentno', this.add_emp.get('documentno')?.value)
+  empformdata.append('document_upload', this.add_emp.get('document_upload')?.value)
+  empformdata.append('emp_password', this.add_emp.get('emp_password')?.value)
+  empformdata.append('admin_id_fk', this.add_emp.get('admin_id_fk')?.value)
+  empformdata.append('emp_img', this.selected_img)
 
-  const empformdata =  new FormData()
-  empformdata.append('emp_name', this.emp_form.get('emp_name')?.value)
-  empformdata.append('father_name', this.emp_form.get('father_name')?.value)
-  empformdata.append('phoneno', this.emp_form.get('phoneno')?.value)
-  empformdata.append('emp_email', this.emp_form.get('emp_email')?.value)
-  empformdata.append('village', this.emp_form.get('village')?.value)
-  empformdata.append('post', this.emp_form.get('post')?.value)
-  empformdata.append('district', this.emp_form.get('district')?.value)
-  empformdata.append('state', this.emp_form.get('state')?.value)
-  empformdata.append('pin', this.emp_form.get('pin')?.value)
-  empformdata.append('signature', this.emp_form.get('signature')?.value)
-  empformdata.append('photo', this.emp_form.get('photo')?.value)
-  empformdata.append('document_type', this.emp_form.get('document_type')?.value)
-  empformdata.append('documentno', this.emp_form.get('documentno')?.value)
-  empformdata.append('document_upload', this.emp_form.get('document_upload')?.value)
-  empformdata.append('emp_password', this.emp_form.get('emp_password')?.value)
-  empformdata.append('admin_id_fk', this.emp_form.get('admin_id_fk')?.value)
-
-    this.servi.post_employeeRegistration(empformdata).subscribe(
+    this.api.post_employeeRegistration(empformdata).subscribe(
       (result:any)=>{
         console.log(result)
       }
     )
   }
-
+  onImgChng(file:any){
+    if(file[0].length===0){
+     return
+    }
+    this.selected_img = file[0];
+     let reader = new FileReader();
+     reader.onload = () =>{
+       this.img_url = reader.result;
+     }
+     reader.readAsDataURL(file[0]);
+   }
   emp(){
-    // this.router.navigate(['/adminhome/employee'])
+    this.router.navigate(['/adminhome/employee'])
   }
-}
+  }

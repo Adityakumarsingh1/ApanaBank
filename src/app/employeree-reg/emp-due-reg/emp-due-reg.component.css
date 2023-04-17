@@ -23,6 +23,17 @@ mat-form-field{
 
   }
 
+  button{
+ left: 40%;
+ margin-left: 10px;
+ top: 45vh;
+
+  }
+
+  @media(min-width: 1020px) and (max-width: 1920px){  
+    
+  }
+
 
 
 

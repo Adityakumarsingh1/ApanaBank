@@ -17,10 +17,20 @@ mat-form-field{
   }
 
   button{
-    left: -35%;
-    margin-left: 20px;
-    top: 250px
+    right: 30%;
+    margin-left: 10px;
+    top: 20vh;
    
      }
+
+@media(min-width: 1020px) and (max-width: 1920px){
+  button{
+    right: 30%;
+    margin-left: 10px;
+    top: 20vh;
+   
+     }
+    }
+     
    
   

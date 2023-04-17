@@ -17,17 +17,21 @@ mat-form-field{
   }
 
   button{
-    left: 45%;
-    margin-left: 5px;
-    top: 60px
+    right: 30%;
+    margin-left: 10px;
+    top: 50vh
    
-     }
+  }
 
-     @media screen {
-      button{
-        margin-top: 30vh;
-      }
-      
-     }
+  @media(min-width: 1020px) and (max-width: 1920px){
+    button{
+      right: 30%;
+      margin-left: 10px;
+      top: 50vh
+     
+    }
+  }
+  
+
 
   

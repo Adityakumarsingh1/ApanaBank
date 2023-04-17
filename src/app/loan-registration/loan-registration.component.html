@@ -3,48 +3,52 @@
     <span>Loan Registration</span>
     <mat-icon (click)="loan()">cancel icon</mat-icon>
   </mat-toolbar>
-  <div>
+  
+  <form [formGroup]="loan_form">
     <mat-form-field appearance="fill">
-      <mat-label>Name*</mat-label>
-      <input matInput placeholder="Name">
+      <mat-label>Name</mat-label>
+      <input formControlName="loan_name" matInput placeholder="Name">
 
     </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Loan_id*</mat-label>
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Loan_id</mat-label>
         <input matInput placeholder="Loan_id*">
 
-      </mat-form-field>
+      </mat-form-field> -->
       <mat-form-field appearance="fill">
-        <mat-label>percentage*</mat-label>
-        <input matInput placeholder="percentage*">
+        <mat-label>percentage</mat-label>
+        <input formControlName="loan_per" matInput placeholder="percentage">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Loan no*</mat-label>
-        <input matInput placeholder="Loan no*">
+        <mat-label>Loan no</mat-label>
+        <input formControlName="loan_no" matInput placeholder="Loan no">
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Duration</mat-label>
-        <input matInput placeholder="Duration"
+        <input formControlName="loan_duration"  matInput placeholder="Duration"
         >
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Date*</mat-label>
-        <input matInput placeholder="Date*">
+        <mat-label>Date</mat-label>
+        <input formControlName="loan_date" matInput placeholder="Date">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Insterset*</mat-label>
-        <input matInput placeholder="Insterset*">
+        <mat-label>Insterset</mat-label>
+        <input formControlName="loan_intrest" matInput placeholder="Insterset">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Install*</mat-label>
-        <input matInput placeholder="Install*">
+        <mat-label>Install</mat-label>
+        <input formControlName="loan_installment" matInput placeholder="Install">
       </mat-form-field>
-    </div>  
-
-      <button mat-raised-button color="accent">Reset</button>
-      <button mat-raised-button color="accent">Submit</button>
-    
+      <input formControlName="cust_id_fk" readonly hidden>
+      <input formControlName="emp_id_fk" readonly hidden>
+      <input formControlName="admin_id_fk" readonly hidden>
+    </form>
+    <span>
+      <button mat-raised-button style="background: red;">Reset</button>
+      <button mat-raised-button style="background: green;" (click)="onsubmit()">Submit</button>
+    </span>
