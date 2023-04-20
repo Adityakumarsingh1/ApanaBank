@@ -11,7 +11,7 @@
         <mat-icon class="pic_add_icon">add</mat-icon>
         <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
       </button>
-</div>
+ </div>
    <form [formGroup]="add_emp">
 
     <mat-form-field appearance="fill">
@@ -20,12 +20,7 @@
       <!-- <input formControlName="emp_name" matInput placeholder="Name"> -->
 
     </mat-form-field>
-<!-- 
-    <mat-form-field appearance="fill">
-        <mat-label>Emp_id*</mat-label>
-        <input matInput placeholder="Emp_id*">
 
-       </mat-form-field> -->
       <mat-form-field appearance="fill">
         <mat-label>father name</mat-label>
         <input formControlName="father_name" matInput placeholder="Father name">
@@ -75,12 +70,6 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Signature</mat-label>
-        <input formControlName="signature" matInput placeholder="Signature">
-        <input type="file" accept=".png,.jpg" >
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
         <mat-label>Document type</mat-label>
         <mat-select>
           <mat-option *ngFor="let document_type of document_type" [value]="document_type">{{document_type}}</mat-option>
@@ -93,16 +82,22 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Document upload</mat-label>
-         <input formControlName="document_upload" matInput placeholder="Document upload" >
-        <input type="file" accept=".pdf">
-       
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
         <input formControlName="emp_password" matInput placeholder="Password">
          </mat-form-field>
+
+         
+      <mat-form-field appearance="fill">
+        <mat-label>Signature</mat-label>
+        <input formControlName="signature" matInput placeholder="Signature">
+        <input type="file" accept=".png,.jpg" >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Document upload</mat-label>
+         <input formControlName="document_upload" matInput placeholder="Document upload" >
+        <input type="file" accept=".pdf">
+      </mat-form-field>
          
       <input formControlName="admin_id_fk" readonly hidden>
     </form>

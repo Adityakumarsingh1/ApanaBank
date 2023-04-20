@@ -65,6 +65,7 @@ import { CustWithdrawalRegComponent } from './customer-reg/cust-withdrawal-reg/c
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -138,7 +139,8 @@ import {MatSelectModule} from '@angular/material/select';
     HttpClientModule,
     MatCardModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
