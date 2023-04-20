@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./loan-registration.component.css']
 })
 export class LoanRegistrationComponent implements OnInit {
+  picker= Date
   loan_form:any;
   constructor(
     private router:Router,
