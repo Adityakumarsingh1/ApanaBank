@@ -9,6 +9,19 @@ import { ApiService } from '../api.service';
   styleUrls: ['./employee-registration.component.css']
 })
 export class EmployeeRegistrationComponent implements OnInit {
+  states: string[] = [
+    'Bihar',
+    'Jharkhand',
+  ]
+  district: string[] =[
+    'Vaishali',
+    'Samastipur',
+    'Begusarai',
+    'Muzaffarpur',
+    'Patna',
+    'Darbhanga',
+    'chapara'
+  ]
   hide=true;
   
   eid:number=0;

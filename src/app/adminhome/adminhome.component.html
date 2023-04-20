@@ -3,6 +3,13 @@
     <mat-icon>menu</mat-icon> 
      </button>
      <h1 style="padding-left: 10px; margin-top: 20px;">Apna Bank</h1>
+     <nav>
+      <button mat-button [matMenuTriggerFor]="menu">Login_as:{{login_as}}</button>
+      <img src="background.jpg" >
+       <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/logout" routerLinkActive="active">Logout</button>
+      </mat-menu>
+     </nav>
      </mat-toolbar>
 
   <mat-drawer-container class="example-container" autosize>

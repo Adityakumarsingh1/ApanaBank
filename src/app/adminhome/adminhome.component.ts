@@ -8,17 +8,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./adminhome.component.css']
 })
 export class AdminhomeComponent {
-  
-  // name:string=''
-  // action_menu:boolean=true
-  // open:boolean = true
-  // admin_login!:FormGroup;
-  // router: any;
-  // login_as:any;
-  // constructor(
-  //   private router:Router
-  // ){
-    
-  // }
-
+  login_as: string = 'aman';
 }

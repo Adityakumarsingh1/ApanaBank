@@ -51,6 +51,7 @@ const routes: Routes = [
   {path:'employee_login',component:EmployeeLoginComponent},
   {path:'customer_login',component:CustomerLoginComponent},
   {path:'forget',component:ForgetComponent},
+  {path:'logout',component:AdminLoginComponent},
   {path:'adminhome',
        component:AdminhomeComponent,
      children:[

@@ -32,13 +32,15 @@
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Phone no</mat-label>
-        <input formControlName="phoneno" matInput placeholder="Phone no">
+        <input formControlName="phoneno" matInput #postalCode maxlength="10" placeholder value=>
+        <!-- <mat-hint align="end">{{postalCode.value.length}} /10</mat-hint> -->
+        <!-- <input formControlName="phoneno" matInput placeholder="Phone no"> -->
 
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input formControlName="emp_email" matInput placeholder="Email"
-        >
+        <input formControlName="emp_email" matInput #postalCode maxlength="30" placeholder value=>
+        
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>village</mat-label>
@@ -52,17 +54,23 @@
 
       <mat-form-field appearance="fill">
         <mat-label>District</mat-label>
-        <input formControlName="district" matInput placeholder="District">
+        <mat-select>
+          <mat-option *ngFor="let district of district" [value]="district">{{district}}</mat-option>
+         </mat-select>
+        <!-- <input formControlName="district" matInput placeholder="District"> -->
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>State</mat-label>
-        <input formControlName="state" matInput placeholder="State">
+        <mat-select>
+          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+         </mat-select>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Pin</mat-label>
-        <input formControlName="pin" matInput placeholder="Pin">
+        <input matInput #postalCode maxlength="6" placeholder value=>
+        <!-- <input formControlName="pin" matInput placeholder="Pin"> -->
       </mat-form-field>
 
       <mat-form-field appearance="fill">
