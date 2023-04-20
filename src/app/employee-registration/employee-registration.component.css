@@ -13,7 +13,7 @@ mat-toolbar{
  .img_style input{
      display: none;
  }
-  .img_style>img{
+ .img_style>img{
      border-radius: 100%;
   }
   .img_style{
@@ -26,17 +26,15 @@ mat-toolbar{
 
 div{
     margin-top: 40px;
-    float: left;
   }
 mat-form-field{
     width: 20.3%;
     margin-left: 40px;
-    float: left;
   }
-  button{
-  right: 40%;
-  top: 320px;
-  margin: 5px;
+button{
+    left: 52%;
+    top: -13vh;
+    margin: 15px;
   }
   /* mat-select{
     width: 20.3%;
@@ -46,11 +44,11 @@ mat-form-field{
   } */
 
   @media(min-width: 1020px) and (max-width: 1920px){
-  button{
-  right: 40%;
-  top: 320px;
-  margin: 5px;
-  } 
+    button{
+      left: 52%;
+      top: -13vh;
+      margin: 15px;
+    }
   }
   
 
