@@ -16,7 +16,8 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
-      <input formControlName="emp_name" matInput placeholder="Name">
+      <input formControlName="emp_name" matInput #postalCode maxlength="30" placeholder value=>
+      <!-- <input formControlName="emp_name" matInput placeholder="Name"> -->
 
     </mat-form-field>
 <!-- 
@@ -76,11 +77,14 @@
       <mat-form-field appearance="fill">
         <mat-label>Signature</mat-label>
         <input formControlName="signature" matInput placeholder="Signature">
+        <input type="file" accept=".png,.jpg" >
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Document type</mat-label>
-        <input formControlName="document_type" matInput placeholder="Document type">
+        <mat-select>
+          <mat-option *ngFor="let document_type of document_type" [value]="document_type">{{document_type}}</mat-option>
+         </mat-select>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -90,7 +94,9 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Document upload</mat-label>
-        <input formControlName="document_upload" matInput placeholder="Document upload">
+         <input formControlName="document_upload" matInput placeholder="Document upload" >
+        <input type="file" accept=".pdf">
+       
       </mat-form-field>
 
       <mat-form-field appearance="fill">

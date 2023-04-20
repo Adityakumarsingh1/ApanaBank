@@ -22,6 +22,13 @@ export class EmployeeRegistrationComponent implements OnInit {
     'Darbhanga',
     'chapara'
   ]
+  document_type: string[] = [
+    'Addhar',
+    'PAN',
+    'Driving licence',
+    'Voter'
+    
+  ]
   hide=true;
   
   eid:number=0;
