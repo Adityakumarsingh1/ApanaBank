@@ -9,6 +9,14 @@ import { ApiService } from '../api.service';
   styleUrls: ['./loan-registration.component.css']
 })
 export class LoanRegistrationComponent implements OnInit {
+  loan_duration:string[] = [
+    '3 Months',
+    '6 Months',
+    '9 Months',
+    '12 Months',
+    '24 Months'
+    
+  ]
   loan_form:any;
   constructor(
     private router:Router,
@@ -21,7 +29,7 @@ export class LoanRegistrationComponent implements OnInit {
 ngOnInit(): void {
   this.loan_form=this.fb.group({
     loan_name:['',Validators.required],
-    loan_per:['',Validators.required],
+    loan_amo:['',Validators.required],
     loan_no:['',Validators.required],
     loan_duration:['',Validators.required],
     loan_date:['',Validators.required],
@@ -38,7 +46,7 @@ onsubmit(){
 
   const loanformdata=new FormData()
   loanformdata.append('loan_name',this.loan_form.get('loan_name')?.value)
-  loanformdata.append('loan_per',this.loan_form.get('loan_per')?.value)
+  loanformdata.append('loan_amo',this.loan_form.get('loan_amo')?.value)
   loanformdata.append('loan_no',this.loan_form.get('loan_no')?.value)
   loanformdata.append('loan_duration',this.loan_form.get('loan_duration')?.value)
   loanformdata.append('loan_date',this.loan_form.get('loan_date')?.value)

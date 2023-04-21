@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Route, Router, Routes } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Route, Router, Routes } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -9,17 +9,57 @@ import { ApiService } from '../api.service';
   styleUrls: ['./customer-registration.component.css']
 })
 export class CustomerRegistrationComponent implements OnInit {
-  cus_form:any;
+  
+  district: string[] =[
+    'Vaishali',
+    'Samastipur',
+    'Begusarai',
+    'Muzaffarpur',
+    'Patna',
+    'Darbhanga',
+    'chapara'
+  ]
+  states: string[] = [
+    'Bihar',
+    'Jharkhand',
+  ]
+  cust_document_type: string[] = [
+    'Addhar',
+    'PAN',
+    'Driving licence',
+    'Voter'
+    
+  ]
+  cid:number=0;
+ customer_registration: any;
+  img_local_url ='http://localhost/upload/';
+  img_url:any = this.img_local_url+'logo.png';
+  selected_img:any;
+  add_cid!:FormGroup;
+  api: any;
+
+
   constructor(
     private router:Router,
     private fb:FormBuilder,
-    private servi:ApiService
+    private servi:ApiService,
+    private url:ActivatedRoute
   )
-  {
-
-  }
-  ngOnInit(): void {
-    this.cus_form =this.fb.group({
+  {}
+  ngOnInit():void {
+    this.cid = this.url.snapshot.params['id'];
+    if (this.cid) {
+      this.api.get_single_custom(this.cid).subscribe(
+        (res: any) => {
+          this.add_cid.patchValue(res.data);
+          this.img_url =(res.data['cus_img'])? this.img_local_url+res.data['cus_img']:this.img_local_url+'logo.png';
+          console.log(res.data)
+        }
+      )
+    }
+    this.add_cid = this.fb.group({
+  // this.ngOnInit(): void {
+    // this.cus_form =this.fb.group({
       cust_name:['',Validators.required],
       cust_father_name:[''],
       cust_phoneno:['',Validators.required],
@@ -40,53 +80,46 @@ export class CustomerRegistrationComponent implements OnInit {
     })
 
   }
+  
 
   onsubmit(){
-    // console.log(this.cus_form.get('cust_name')?.value)
-    // console.log(this.cus_form.get('cust_father_name')?.value)
-    // console.log(this.cus_form.get('cust_phoneno')?.value)
-    // console.log(this.cus_form.get('cust_email')?.value)
-    // console.log(this.cus_form.get('cust_village')?.value)
-    // console.log(this.cus_form.get('post')?.value)
-    // console.log(this.cus_form.get('district')?.value)
-    // console.log(this.cus_form.get('state')?.value)
-    // console.log(this.cus_form.get('pin')?.value)
-    // console.log(this.cus_form.get('cust_signature')?.value)
-    // console.log(this.cus_form.get('cust_photo')?.value)
-    // console.log(this.cus_form.get('cust_document_type')?.value)
-    // console.log(this.cus_form.get('cust_documentno')?.value)
-    // console.log(this.cus_form.get('cust_document_upload')?.value)
-    // console.log(this.cus_form.get('cust_password')?.value)
-    // console.log(this.cus_form.get('emp_id_fk')?.value)
-    // console.log(this.cus_form.get('admin_id_fk')?.value)
-
-
-    const custformdata =  new FormData()
-    custformdata.append('cust_name', this.cus_form.get('cust_name')?.value)
-    custformdata.append('cust_father_name', this.cus_form.get('cust_father_name')?.value)
-    custformdata.append('cust_phoneno', this.cus_form.get('cust_phoneno')?.value)
-    custformdata.append('cust_email', this.cus_form.get('cust_email')?.value)
-    custformdata.append('cust_village', this.cus_form.get('cust_village')?.value)
-    custformdata.append('post', this.cus_form.get('post')?.value)
-    custformdata.append('district', this.cus_form.get('district')?.value)
-    custformdata.append('state', this.cus_form.get('state')?.value)
-    custformdata.append('pin', this.cus_form.get('pin')?.value)
-    custformdata.append('cust_signature', this.cus_form.get('cust_signature')?.value)
-    custformdata.append('cust_photo', this.cus_form.get('cust_photo')?.value)
-    custformdata.append('cust_document_type', this.cus_form.get('cust_document_type')?.value)
-    custformdata.append('cust_documentno', this.cus_form.get('cust_documentno')?.value)
-    custformdata.append('cust_document_upload', this.cus_form.get('cust_document_upload')?.value)
-    custformdata.append('cust_password', this.cus_form.get('cust_password')?.value)
-    custformdata.append('emp_id_fk', this.cus_form.get('emp_id_fk')?.value)
-    custformdata.append('admin_id_fk', this.cus_form.get('admin_id_fk')?.value)
-    this.servi.post_customerregistration(custformdata).subscribe(
+      const custformdata =  new FormData()
+    custformdata.append('cust_name', this.add_cid.get('cust_name')?.value)
+    custformdata.append('cust_father_name', this.add_cid.get('cust_father_name')?.value)
+    custformdata.append('cust_phoneno', this.add_cid.get('cust_phoneno')?.value)
+    custformdata.append('cust_email', this.add_cid.get('cust_email')?.value)
+    custformdata.append('cust_village', this.add_cid.get('cust_village')?.value)
+    custformdata.append('post', this.add_cid.get('post')?.value)
+    custformdata.append('district', this.add_cid.get('district')?.value)
+    custformdata.append('state', this.add_cid.get('state')?.value)
+    custformdata.append('pin', this.add_cid.get('pin')?.value)
+    custformdata.append('cust_signature', this.add_cid.get('cust_signature')?.value)
+    custformdata.append('cust_photo', this.add_cid.get('cust_photo')?.value)
+    custformdata.append('cust_document_type', this.add_cid.get('cust_document_type')?.value)
+    custformdata.append('cust_documentno', this.add_cid.get('cust_documentno')?.value)
+    custformdata.append('cust_document_upload', this.add_cid.get('cust_document_upload')?.value)
+    custformdata.append('cust_password', this.add_cid.get('cust_password')?.value)
+    custformdata.append('emp_id_fk', this.add_cid.get('emp_id_fk')?.value)
+    custformdata.append('admin_id_fk', this.add_cid.get('admin_id_fk')?.value)
+    this.api.post_customerregistration(custformdata).subscribe(
       (result:any)=>{
         console.log(result)
       }
     )
   }
+  onImgChng(file:any){
+    if(file[0].length===0){
+     return
+    }
+    this.selected_img = file[0];
+     let reader = new FileReader();
+     reader.onload = () =>{
+       this.img_url = reader.result;
+     }
+     reader.readAsDataURL(file[0]);
+   }
   cust(){
     this.router.navigate(['/adminhome/customer'])
   }
 
-};
+}

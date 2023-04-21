@@ -27,6 +27,9 @@ export class ApiService {
   get_cust(){
     return this.http.get<any>('http://localhost/api/custmer_view.php')
   }
+  get_single_customt( cid:any){
+    return this.http.get(this.baseUrl+'http://localhost/api/custmer_view.php')
+  }
   post_customerregistration(data:any){
     return this.http.post<any>('http://localhost/api/insert_cust.php',data)
   }
