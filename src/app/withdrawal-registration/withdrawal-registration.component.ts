@@ -22,7 +22,7 @@ export class WithdrawalRegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.with_form=this.fb.group({
       with_name:['',Validators.required],
-      with_date:['',Validators.required],
+      with_date	:['',Validators.required],
       with_amount:['',Validators.required],
       emp_id_fk:['',Validators.required],
       admin_id_fk:['']

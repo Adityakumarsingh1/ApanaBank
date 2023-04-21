@@ -80,12 +80,6 @@
         <!-- <input formControlName="pin" matInput placeholder="Pin"> -->
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Signature</mat-label>
-        <input formControlName="cust_signature" matInput placeholder="Signature">
-        <input type="file" accept=".png,.jpg" >
-      </mat-form-field>
-
       <!-- <mat-form-field appearance="fill">
         <mat-label>Photo</mat-label>
         <input formControlName="cust_photo" matInput placeholder="Photo">
@@ -105,15 +99,23 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input formControlName="cust_password"  matInput placeholder="Password">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Signature</mat-label>
+        <input formControlName="cust_signature" matInput placeholder="Signature">
+        <input type="file" accept=".png,.jpg" >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
         <mat-label>Document upload</mat-label>
         <input formControlName="cust_document_upload"  matInput placeholder="Document upload">
         <input type="file" accept=".pdf">
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input formControlName="cust_password"  matInput placeholder="Password">
-      </mat-form-field>
+      
 
       <input formControlName="emp_id_fk" readonly hidden>
 

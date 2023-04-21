@@ -31,26 +31,34 @@ mat-form-field{
     width: 20.3%;
     margin-left: 40px;
   }
-button{
+/* button{
     left: 52%;
     top: -13vh;
     margin: 15px;
-  }
+  } */
   /* mat-select{
     width: 20.3%;
     margin-left: 40px;
     height: 50%;
     
   } */
+  form{
+    position: fixed;
+  }
 
-  @media(min-width: 1020px) and (max-width: 1920px){
+  /* @media(min-width: 1020px) and (max-width: 1920px){
     button{
       left: 52%;
       top: -13vh;
       margin: 15px;
     }
+  } */
+  button{
+    position: 80%;
+    top: 50%;
+    left: 50%;
+    margin: 15px;
   }
-  
 
 
 
