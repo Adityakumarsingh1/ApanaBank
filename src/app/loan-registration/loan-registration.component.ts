@@ -17,6 +17,9 @@ export class LoanRegistrationComponent implements OnInit {
     '24 Months'
     
   ]
+
+  picker= Date
+
   loan_form:any;
   constructor(
     private router:Router,
