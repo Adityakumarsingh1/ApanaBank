@@ -49,14 +49,22 @@ mat-form-field{
     
   } */
 
-  @media(min-width: 1020px) and (max-width: 1920px){
+  /* @media(min-width: 1020px) and (max-width: 1920px){
     button{
       left: 52%;
       top: -13vh;
       margin: 15px;
     }
+  } */
+  form{
+    position: fixed;
   }
-
+  button{
+    left: 50%;
+    top: 50%;
+    margin: 15px;
+    position: 80%;
+  }
 
 
 
