@@ -1,12 +1,13 @@
 mat-card{
     width: calc(25% - 21px);
     height: 116px;
-    border-left: 5px solid#1d1f23;
+    border-left: 5px solid#0a0a0b;
+    border-bottom: solid#0a0a0b;
     border-radius: 5px;
     float: left;
     margin-top: 18px;
     margin-left: 18px;
-    background-color:  rgba(0, 0, 0, 0.901);
+    background-color:  rgba(0, 0, 0, 0.834);
     color:white
     
   }
@@ -35,3 +36,11 @@ span {
     text-align: left;
     font-size: 20px;
   }
+
+mat-card:hover{
+    background-color: #2c3344;
+}
+
+mat-card:focus{
+    background-color: #565a67; 
+} 

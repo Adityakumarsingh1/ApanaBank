@@ -14,8 +14,7 @@ export class LoanRegistrationComponent implements OnInit {
     '6 Months',
     '9 Months',
     '12 Months',
-    '24 Months'
-    
+    '24 Months' 
   ]
 
   picker= Date
@@ -69,8 +68,6 @@ onsubmit(){
   }
   loan(){
     this.router.navigate(['/adminhome/loan'])
-  
-
- 
+   
 }
 };
