@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
@@ -44,6 +44,7 @@ import { CustDepositComponent } from './customerhome/cust-deposit/cust-deposit.c
 import { CustWithdrawalComponent } from './customerhome/cust-withdrawal/cust-withdrawal.component';
 import { CustLoanRegComponent } from './customer-reg/cust-loan-reg/cust-loan-reg.component';
 import { CustDueRegComponent } from './customer-reg/cust-due-reg/cust-due-reg.component';
+import { CreatenewComponent } from './createnew/createnew.component';
 
 const routes: Routes = [
   {path:'',component:AdminLoginComponent},
@@ -52,6 +53,7 @@ const routes: Routes = [
   {path:'customer_login',component:CustomerLoginComponent},
   {path:'forget',component:ForgetComponent},
   {path:'logout',component:AdminLoginComponent},
+  {path:'createnew',component:CreatenewComponent},
   {path:'adminhome',
        component:AdminhomeComponent,
      children:[

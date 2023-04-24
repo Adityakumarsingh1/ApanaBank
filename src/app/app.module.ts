@@ -4,18 +4,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule} from '@angular/material/icon';
+import { MatButtonModule} from '@angular/material/button';
+import { MatMenuModule} from '@angular/material/menu';
 import { ForgetComponent } from './forget/forget.component';
 import { EmployeeLoginComponent } from './employee-login/employee-login.component';
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
-import { CreateComponent } from './create/create.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import  {MatInputModule} from '@angular/material/input';
+import { MatSidenavModule} from '@angular/material/sidenav';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { DashboardComponent } from './adminhome/dashboard/dashboard.component';
 import { EmployeeComponent } from './adminhome/employee/employee.component';
@@ -26,7 +25,7 @@ import { DueComponent } from './adminhome/due/due.component';
 import { EmployeeSalaryComponent } from './adminhome/employee-salary/employee-salary.component';
 import { DepositComponent } from './adminhome/deposit/deposit.component';
 import { WithdrawalComponent } from './adminhome/withdrawal/withdrawal.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule} from '@angular/material/table';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
@@ -64,9 +63,10 @@ import { CustDepositRegComponent } from './customer-reg/cust-deposit-reg/cust-de
 import { CustWithdrawalRegComponent } from './customer-reg/cust-withdrawal-reg/cust-withdrawal-reg.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatSelectModule} from '@angular/material/select';
+import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CreatenewComponent } from './createnew/createnew.component';
 
 
 
@@ -77,7 +77,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     ForgetComponent,
     EmployeeLoginComponent,
     CustomerLoginComponent,
-    CreateComponent,
     AdminhomeComponent,
     DashboardComponent,
     EmployeeComponent,
@@ -121,6 +120,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     CustDueRegComponent,
     CustDepositRegComponent,
     CustWithdrawalRegComponent,
+    CreatenewComponent,
  
   ],
   imports: [

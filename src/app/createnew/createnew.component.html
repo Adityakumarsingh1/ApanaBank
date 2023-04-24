@@ -1,0 +1,28 @@
+<div class="loginbox">
+   
+   <h1 > create new account</h1>
+    <!-- <form [formGroup]="admin_login"> -->
+    <div class="example-container">
+     <mat-form-field appearance="fill" color="primary">
+    <mat-label>Name </mat-label>
+    <input matInput placeholder=" Enter your Name">
+   </mat-form-field>
+
+
+   <div class="example-container">
+      <mat-form-field appearance="fill" color="primary">
+     <mat-label>Email </mat-label>
+     <input matInput placeholder=" Enter your Email">
+    </mat-form-field>
+
+    <div class="example-container">
+      <mat-form-field appearance="fill" color="primary">
+     <mat-label>password </mat-label>
+     <input matInput placeholder=" create password">
+    </mat-form-field>
+
+    <button mat-raised-button type="cancle" style="background-color: red;" class="btn btn-primary" (click)="oncancle()">cancel</button>
+    <button mat-raised-button type="submit " style="background-color: green"  class="btn btn-primary" (click)="onsubmit()">Submit</button>
+
+ 
+ 

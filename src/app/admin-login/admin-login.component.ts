@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, createComponent, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreatenewComponent } from '../createnew/createnew.component';
 
 @Component({
   selector: 'app-admin-login',
@@ -14,7 +16,8 @@ export class AdminLoginComponent implements OnInit {
   constructor(
     private fb:FormBuilder,
     private api:ApiService,
-    private router:Router
+    private router:Router,
+    private dailog:MatDialog,
   ){}
 
   ngOnInit(): void {
@@ -36,4 +39,9 @@ export class AdminLoginComponent implements OnInit {
       }
     )
   }
+  createa(){
+    this.dailog.open(CreatenewComponent )
+  }
+ 
+  
 }

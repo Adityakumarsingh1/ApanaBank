@@ -58,12 +58,16 @@ onsubmit(){
   loanformdata.append('emp_id_fk',this.loan_form.get('emp_id_fk')?.value)
   loanformdata.append('admin_id_fk',this.loan_form.get('admin_id_fk')?.value)
 
+ 
+
 
   this.servi.post_LoanRegistration(loanformdata).subscribe(
    ( result:any)=>{
     console.log(result)
    }
   )
+
+ 
     
   }
   loan(){
