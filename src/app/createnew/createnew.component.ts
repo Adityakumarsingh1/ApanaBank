@@ -15,7 +15,7 @@ constructor(
 }
   
 onsubmit(){
-  // alert('okk')
+  alert('okk')
   this.router.navigate(['/admin_login'])
 }
 oncancle(){
