@@ -5,9 +5,13 @@
   </mat-toolbar>
   
   <form [formGroup]="loan_form">
+  
     <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
-      <input formControlName="loan_name" matInput placeholder="Name">
+      <mat-label>Customer</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let cust of customer" [value]="cust.cust_id">{{cust.cust_name}}</mat-option>
+       </mat-select>
+      <!-- <input formControlName="district" matInput placeholder="District"> -->
     </mat-form-field>
 
     <!-- <mat-form-field appearance="fill">
@@ -23,7 +27,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Loan no</mat-label>
-        <input formControlName="loan_no" matInput placeholder="Loan no">
+        <input formControlName="loan_no" matInput placeholder="loan no ">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -38,22 +42,23 @@
         <input formControlName="loan_date" matInput placeholder="Date">
       </mat-form-field> -->
 
-      <mat-form-field appearance="fill">
+      <!-- <mat-form-field appearance="fill">
         <mat-label>Date</mat-label>
-        <mat-date-range-input [rangePicker]="picker">
-          <input formControlName="loan_date" matStartDate placeholder="Start date">
-          <input formControlName="loan_date" matEndDate placeholder="End date">
-        </mat-date-range-input>
-        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      </mat-form-field>
+        <input formControlName="loan_date" matInput [matDatepicker]="dp">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+      </mat-form-field> -->
+
+       <span>
+      <input formControlName="loan_date" type="date" matInput>
+      </span>
       
       
 
       <mat-form-field appearance="fill">
         <mat-label>Insterset</mat-label>
-        <input formControlName="loan_intrest" matInput placeholder="Insterset">
+        <input formControlName="loan_intrest" matInput placeholder="intrest">
       </mat-form-field>
 
       <mat-form-field appearance="fill">

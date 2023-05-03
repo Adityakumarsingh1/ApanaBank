@@ -10,26 +10,17 @@ div{
     margin-top: 30px;
     float: left;
   }
+  
 mat-form-field{
     width: 20.3%;
     margin-left: 40px;
     float: left;
   }
 
-  button{
-    right: 30%;
-    margin-left: 10px;
-    top: 50vh
-   
-  }
+  
 
   @media(min-width: 1020px) and (max-width: 1920px){
-    button{
-      right: 30%;
-      margin-left: 10px;
-      top: 50vh
-     
-    }
+
   }
   
 

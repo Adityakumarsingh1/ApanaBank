@@ -38,7 +38,7 @@ export class ApiService {
       return this.http.post<any>('http://localhost/api/insert_loan.php',data)
   }
   get_loan(){
-    return this.http.get<any>('http://localhost/api/veiw%20loan.php',)
+    return this.http.get<any>('http://localhost/api/veiw%20loan.php')
   }
   post_creditscoreRegistation(data:any){
     return this.http.post<any>('http://localhost/api/insert_cred_score.php',data)
