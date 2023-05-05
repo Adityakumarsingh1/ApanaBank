@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./deposit.component.css']
 })
 export class DepositComponent {
-  displayedColumns: string[] = ['dep_id', 'dep_name','dep_amount',];
+  displayedColumns: string[] = ['dep_id', 'dep_name','date','dep_amount',];
   dataSource = new MatTableDataSource()
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

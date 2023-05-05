@@ -8,7 +8,7 @@
   
     <mat-form-field appearance="fill">
       <mat-label>Customer</mat-label>
-      <mat-select>
+      <mat-select (valueChange)="genLoneNo()">
         <mat-option *ngFor="let cust of customer" [value]="cust.cust_id">{{cust.cust_name}}</mat-option>
        </mat-select>
       <!-- <input formControlName="district" matInput placeholder="District"> -->
@@ -21,8 +21,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Amount</mat-label>
-        <input formControlName="loan_amo" matInput placeholder="Amount">
-
+        <input formControlName="loan_amount" matInput placeholder="Amount">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -32,8 +31,11 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Duration</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let loan_duration of loan_duration" [value]="loan_duration">{{loan_duration}}</mat-option>
+        <mat-select  (valueChange)="onDurationCalc($event)" >
+          <mat-option  value="3">3 Months</mat-option>
+          <mat-option  value="6">6 Months</mat-option>
+          <mat-option  value="9">9 Months</mat-option>
+          <mat-option  value="12">12 Months</mat-option>
          </mat-select>
         <!-- <input formControlName="loan_duration"  matInput placeholder="Duration"> -->
       </mat-form-field>
@@ -41,21 +43,7 @@
         <mat-label>Date</mat-label>
         <input formControlName="loan_date" matInput placeholder="Date">
       </mat-form-field> -->
-
-      <!-- <mat-form-field appearance="fill">
-        <mat-label>Date</mat-label>
-        <input formControlName="loan_date" matInput [matDatepicker]="dp">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
-        <mat-datepicker #dp></mat-datepicker>
-      </mat-form-field> -->
-
-       <span>
-      <input formControlName="loan_date" type="date" matInput>
-      </span>
-      
-      
-
+     
       <mat-form-field appearance="fill">
         <mat-label>Insterset</mat-label>
         <input formControlName="loan_intrest" matInput placeholder="intrest">
@@ -65,11 +53,30 @@
         <mat-label>Install</mat-label>
         <input formControlName="loan_installment" matInput placeholder="Install">
       </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Total Amount</mat-label>
+        <input formControlName="total_amount" matInput placeholder="Total Amount">
+      </mat-form-field>
+
+      <div class="datePicker">
+         <mat-label style="margin-left: 4px; line-height: normal;">Date </mat-label> 
+         <input matInput type="date" style="line-height: 50px; font-size: 20px;" formControlName="loan_date" class="example-right-align">
+      </div>
+
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+
       <input formControlName="cust_id_fk" readonly hidden>
       <input formControlName="emp_id_fk" readonly hidden>
       <input formControlName="admin_id_fk" readonly hidden>
     </form>
-    <span>
+    <span class="button">
       <button mat-raised-button style="background: red;">Reset</button>
       <button mat-raised-button style="background: green;" (click)="onsubmit()">Submit</button>
     </span>

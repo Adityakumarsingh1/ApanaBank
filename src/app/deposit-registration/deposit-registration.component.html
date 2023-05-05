@@ -8,11 +8,11 @@
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input formControlName="dep_name" matInput placeholder="Name">
-
     </mat-form-field>
+    
     <mat-form-field appearance="fill">
       <mat-label>Date</mat-label>
-      <input matInput [matDatepicker]="picker">
+      <input matInput formControlName="dep_date" [matDatepicker]="picker">
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>

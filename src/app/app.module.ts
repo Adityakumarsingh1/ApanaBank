@@ -67,6 +67,17 @@ import { MatSelectModule} from '@angular/material/select';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CreatenewComponent } from './createnew/createnew.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
+
+
+
+
+
+
+
 
 
 
@@ -143,7 +154,11 @@ import { CreatenewComponent } from './createnew/createnew.component';
     MatPaginatorModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatSlideToggleModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

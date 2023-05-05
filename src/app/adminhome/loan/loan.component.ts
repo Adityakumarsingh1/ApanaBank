@@ -13,7 +13,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./loan.component.css']
 })
 export class LoanComponent  implements OnInit{
-  displayedColumns: string[] = ['loan_id','loan_no',  'loan_date','loan_installment'];
+  displayedColumns: string[] = ['loan_id','cust_name','loan_no','loan_date','loan_installment'];
   dataSource = new MatTableDataSource()
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
