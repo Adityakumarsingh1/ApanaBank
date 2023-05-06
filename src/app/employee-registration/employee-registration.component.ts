@@ -29,7 +29,6 @@ export class EmployeeRegistrationComponent implements OnInit {
     'Voter'
     
   ]
-  
   hide=true;
   
   eid:number=0;
@@ -116,6 +115,15 @@ export class EmployeeRegistrationComponent implements OnInit {
        this.img_url = reader.result;
      }
      reader.readAsDataURL(file[0]);
+   }
+   ngDistrictcalc(event:any){
+    this.add_emp.get('district')?.setValue
+   }
+   ngstate(event:any){
+    this.add_emp.get('state')?.setValue
+   }
+   ondocument(event:any){
+    this.add_emp.get('document_type')?.setValue
    }
   emp(){
     this.router.navigate(['/adminhome/employee'])

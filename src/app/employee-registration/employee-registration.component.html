@@ -1,108 +1,108 @@
-
-<mat-toolbar>
-    <span>Employee Registration</span>
-    <mat-icon (click)="emp()" >cancel icon</mat-icon>
-  </mat-toolbar>
+     <mat-toolbar>
+     <span>Employee Registration</span>
+     <mat-icon (click)="emp()" >cancel icon</mat-icon>
+     </mat-toolbar>
   
-  
-  <div class="img_style">
-    <img [src]="img_url" width="100%" height="100%">
+     <div class="img_style">
+     <img [src]="img_url" width="100%" height="100%">
      <button mat-fab color="primary" (click)="image.click()">
-        <mat-icon class="pic_add_icon">add</mat-icon>
-        <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
+      <mat-icon class="pic_add_icon">add</mat-icon>
+      <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
       </button>
- </div>
-   <form [formGroup]="add_emp">
+       </div>
 
-    <mat-form-field appearance="fill">
+
+   <form [formGroup]="add_emp">
+      <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input formControlName="emp_name" matInput #postalCode maxlength="30" placeholder value=>
-      <!-- <input formControlName="emp_name" matInput placeholder="Name"> -->
+      </mat-form-field>
 
-    </mat-form-field>
-
-      <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
         <mat-label>father name</mat-label>
         <input formControlName="father_name" matInput placeholder="Father name">
+        </mat-form-field>
 
-      </mat-form-field>
-      <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
         <mat-label>Phone no</mat-label>
         <input formControlName="phoneno" matInput #postalCode maxlength="10" placeholder value=>
-        <!-- <mat-hint align="end">{{postalCode.value.length}} /10</mat-hint> -->
-        <!-- <input formControlName="phoneno" matInput placeholder="Phone no"> -->
+        </mat-form-field>
 
-      </mat-form-field>
-      <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input formControlName="emp_email" matInput #postalCode maxlength="30" placeholder value=>
-        
-      </mat-form-field>
-      <mat-form-field appearance="fill">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
         <mat-label>village</mat-label>
         <input formControlName="village" matInput placeholder="village">
-      </mat-form-field>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
         <mat-label>post</mat-label>
         <input formControlName="post" matInput placeholder="post">
-      </mat-form-field>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
         <mat-label>District</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let district of district" [value]="district">{{district}}</mat-option>
+        <mat-select (valueChange)="ngDistrictcalc($event)" formControlName="district" >
+          <mat-option  value="Vaishali">Vaishali</mat-option>
+          <mat-option  value="Samastipur">Samastipur</mat-option>
+          <mat-option  value="Begusarai">Begusarai</mat-option>
+          <mat-option  value="Muzaffarpur">Muzaffarpur</mat-option>
+          <mat-option  value="Patna">Patna</mat-option>
+          <mat-option  value="Darbhanga">Darbhanga</mat-option>
+          <mat-option  value="chapara">chapara</mat-option>
          </mat-select>
-        <!-- <input formControlName="district" matInput placeholder="District"> -->
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>State</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-         </mat-select>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Pin</mat-label>
-        <input matInput #postalCode maxlength="6" placeholder value=>
-        <!-- <input formControlName="pin" matInput placeholder="Pin"> -->
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Document type</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let document_type of document_type" [value]="document_type">{{document_type}}</mat-option>
-         </mat-select>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Document no</mat-label>
-        <input formControlName="documentno" matInput placeholder="Document no">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input formControlName="emp_password" matInput placeholder="Password">
          </mat-form-field>
 
-      <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select (valueChange)="ngstate($event)" formControlName="state">
+        <mat-option  value="Bihar"> Bihar</mat-option>
+        <mat-option  value="Jharkhand"> Jharkhand</mat-option>
+        </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" >
+        <mat-label>Pin</mat-label>
+        <input formControlName="pin" matInput #postalCode maxlength="6" placeholder value=>
+        </mat-form-field>
+
+         <mat-form-field appearance="fill">
+         <mat-label>Document type</mat-label>
+         <mat-select (valueChange)="ondocument($event)" formControlName="document_type">
+         <mat-option value="Addhar"> Addhar</mat-option>
+         <mat-option value="PAN"> PAN</mat-option>
+         <mat-option value="Driving licence"> Driving licence</mat-option>
+         <mat-option value="Voter"> Voter</mat-option>
+         </mat-select>
+         </mat-form-field>
+
+        <mat-form-field appearance="fill">
+        <mat-label>Document no</mat-label>
+        <input formControlName="documentno" matInput placeholder="Document no">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input formControlName="emp_password" matInput placeholder="Password">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
         <mat-label>Signature</mat-label>
         <input formControlName="signature" matInput placeholder="Signature">
         <input type="file" accept=".png,.jpg" >
-      </mat-form-field>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" >
         <mat-label>Document upload</mat-label>
-         <input formControlName="document_upload" matInput placeholder="Document upload" >
-        <input type="file" accept=".pdf">
-       
-      </mat-form-field>
+        <input formControlName="document_upload" matInput >
+        <input  type="file" accept=".pdf">
+        </mat-form-field>
 
-      
-         
-      <input formControlName="admin_id_fk" readonly hidden>
-    </form>
+        <input formControlName="admin_id_fk" readonly hidden>
+        </form>
 
     <span>
       <button mat-raised-button style="background: red;">Reset</button>

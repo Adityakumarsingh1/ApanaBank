@@ -24,15 +24,16 @@ export class ApiService {
   get_single_employe(eid:any){
     return this.http.get(this.baseUrl+'http://localhost/api/emp_view.php')
   }
+  post_customerregistration(data:any){
+    return this.http.post<any>('http://localhost/api/insert_cust.php',data)
+  }
   get_cust(){
     return this.http.get<any>('http://localhost/api/custmer_view.php')
   }
   get_single_customt( cid:any){
     return this.http.get(this.baseUrl+'http://localhost/api/custmer_view.php')
   }
-  post_customerregistration(data:any){
-    return this.http.post<any>('http://localhost/api/insert_cust.php',data)
-  }
+ 
   
   post_LoanRegistration(data:any){
       return this.http.post<any>('http://localhost/api/insert_loan.php',data)
