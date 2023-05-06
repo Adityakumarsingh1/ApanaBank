@@ -6,13 +6,12 @@
   
   <form [formGroup]="loan_form">
   
-    <mat-form-field appearance="fill">
-      <mat-label>Customer</mat-label>
-      <mat-select (valueChange)="genLoneNo()">
-        <mat-option *ngFor="let cust of customer" [value]="cust.cust_id">{{cust.cust_name}}</mat-option>
-       </mat-select>
-      <!-- <input formControlName="district" matInput placeholder="District"> -->
-    </mat-form-field>
+         <mat-form-field appearance="fill">
+         <mat-label>Customer</mat-label>
+         <mat-select (valueChange)="genLoneNo()" formControlName="cust_name">
+         <mat-option *ngFor="let cust of customer" [value]="cust.cust_id">{{cust.cust_name}}</mat-option>
+        </mat-select>
+        </mat-form-field>
 
     <!-- <mat-form-field appearance="fill">
         <mat-label>Loan_id</mat-label>
@@ -20,48 +19,39 @@
       </mat-form-field> -->
 
       <mat-form-field appearance="fill">
-        <mat-label>Amount</mat-label>
-        <input formControlName="loan_amount" matInput placeholder="Amount">
+      <mat-label>Amount</mat-label>
+      <input formControlName="loan_amount" matInput placeholder="Amount">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Loan no</mat-label>
-        <input formControlName="loan_no" matInput placeholder="loan no ">
+      <mat-label>Loan no</mat-label>
+      <input formControlName="loan_no" matInput placeholder="loan no ">
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Duration</mat-label>
-        <mat-select  (valueChange)="onDurationCalc($event)" >
+          <mat-form-field appearance="fill">
+          <mat-label>Duration</mat-label>
+          <mat-select  (valueChange)="onDurationCalc($event)" formControlName="loan_duration">
           <mat-option  value="3">3 Months</mat-option>
           <mat-option  value="6">6 Months</mat-option>
           <mat-option  value="9">9 Months</mat-option>
           <mat-option  value="12">12 Months</mat-option>
          </mat-select>
-        <!-- <input formControlName="loan_duration"  matInput placeholder="Duration"> -->
-      </mat-form-field>
-      <!-- <mat-form-field appearance="fill">
-        <mat-label>Date</mat-label>
-        <input formControlName="loan_date" matInput placeholder="Date">
-      </mat-form-field> -->
+         </mat-form-field>
+     
      
       <mat-form-field appearance="fill">
-        <mat-label>Insterset</mat-label>
-        <input formControlName="loan_intrest" matInput placeholder="intrest">
+      <mat-label>Insterset</mat-label>
+      <input formControlName="loan_intrest" matInput placeholder="intrest">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Install</mat-label>
-        <input formControlName="loan_installment" matInput placeholder="Install">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Total Amount</mat-label>
-        <input formControlName="total_amount" matInput placeholder="Total Amount">
+      <mat-label>Install</mat-label>
+      <input formControlName="loan_installment" matInput placeholder="Install">
       </mat-form-field>
 
       <div class="datePicker">
-         <mat-label style="margin-left: 4px; line-height: normal;">Date </mat-label> 
-         <input matInput type="date" style="line-height: 50px; font-size: 20px;" formControlName="loan_date" class="example-right-align">
+        <mat-label style="margin-left: 4px; line-height: normal;">Date </mat-label> 
+        <input matInput type="date" style="line-height: 50px; font-size: 20px;" formControlName="loan_date" class="example-right-align">
       </div>
 
       <!-- <mat-form-field appearance="fill">

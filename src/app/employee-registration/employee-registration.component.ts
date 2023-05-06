@@ -9,28 +9,8 @@ import { ApiService } from '../api.service';
   styleUrls: ['./employee-registration.component.css']
 })
 export class EmployeeRegistrationComponent implements OnInit {
-  states: string[] = [
-    'Bihar',
-    'Jharkhand',
-  ]
-  district: string[] =[
-    'Vaishali',
-    'Samastipur',
-    'Begusarai',
-    'Muzaffarpur',
-    'Patna',
-    'Darbhanga',
-    'chapara'
-  ]
-  document_type: string[] = [
-    'Addhar',
-    'PAN',
-    'Driving licence',
-    'Voter'
-    
-  ]
-  hide=true;
-  
+ hide=true;
+   
   eid:number=0;
   employee_registration: any;
   img_local_url ='http://localhost/upload/';
@@ -115,6 +95,15 @@ export class EmployeeRegistrationComponent implements OnInit {
        this.img_url = reader.result;
      }
      reader.readAsDataURL(file[0]);
+   }
+   ngDistrictcalc(event:any){
+    this.add_emp.get('district')?.setValue
+   }
+   ngstate(event:any){
+    this.add_emp.get('state')?.setValue
+   }
+   ondocument(event:any){
+    this.add_emp.get('document_type')?.setValue
    }
   emp(){
     this.router.navigate(['/adminhome/employee'])

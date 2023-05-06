@@ -21,7 +21,7 @@ export class LoanRegistrationComponent implements OnInit {
 ngOnInit(): void {
   this.loan_form=this.fb.group({
     loan_id:[''],
-    // cust_name:['',Validators.required],
+    cust_name:['',Validators.required],
     loan_amount:['',Validators.required],
     loan_no:['',Validators.required],
     loan_duration:['',Validators.required],
