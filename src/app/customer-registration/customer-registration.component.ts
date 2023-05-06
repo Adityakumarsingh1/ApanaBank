@@ -10,26 +10,26 @@ import { ApiService } from '../api.service';
 })
 export class CustomerRegistrationComponent implements OnInit {
   
-  district: string[] =[
-    'Vaishali',
-    'Samastipur',
-    'Begusarai',
-    'Muzaffarpur',
-    'Patna',
-    'Darbhanga',
-    'chapara'
-  ]
-  states: string[] = [
-    'Bihar',
-    'Jharkhand',
-  ]
-  cust_document_type: string[] = [
-    'Addhar',
-    'PAN',
-    'Driving licence',
-    'Voter'
+  // district: string[] =[
+  //   'Vaishali',
+  //   'Samastipur',
+  //   'Begusarai',
+  //   'Muzaffarpur',
+  //   'Patna',
+  //   'Darbhanga',
+  //   'chapara'
+  // ]
+  // states: string[] = [
+  //   'Bihar',
+  //   'Jharkhand',
+  // ]
+  // cust_document_type: string[] = [
+  //   'Addhar',
+  //   'PAN',
+  //   'Driving licence',
+  //   'Voter'
     
-  ]
+  // ]
   cid:number=0;
  customer_registration: any;
   img_local_url ='http://localhost/upload/';
@@ -70,7 +70,7 @@ export class CustomerRegistrationComponent implements OnInit {
       state:[''],
       pin:[''],
       cust_signature:[''],
-      cust_photo:[''],
+      cus_img:[''],
       cust_document_type:[''],
       cust_documentno:['',Validators.required],
       cust_document_upload:['',Validators.required],
@@ -84,6 +84,7 @@ export class CustomerRegistrationComponent implements OnInit {
 
   onsubmit(){
       const custformdata =  new FormData()
+      alert('okk')
     custformdata.append('cust_name', this.add_cid.get('cust_name')?.value)
     custformdata.append('cust_father_name', this.add_cid.get('cust_father_name')?.value)
     custformdata.append('cust_phoneno', this.add_cid.get('cust_phoneno')?.value)
@@ -94,11 +95,11 @@ export class CustomerRegistrationComponent implements OnInit {
     custformdata.append('state', this.add_cid.get('state')?.value)
     custformdata.append('pin', this.add_cid.get('pin')?.value)
     custformdata.append('cust_signature', this.add_cid.get('cust_signature')?.value)
-    custformdata.append('cust_photo', this.add_cid.get('cust_photo')?.value)
     custformdata.append('cust_document_type', this.add_cid.get('cust_document_type')?.value)
     custformdata.append('cust_documentno', this.add_cid.get('cust_documentno')?.value)
     custformdata.append('cust_document_upload', this.add_cid.get('cust_document_upload')?.value)
     custformdata.append('cust_password', this.add_cid.get('cust_password')?.value)
+    custformdata.append('cust_img',this.selected_img)
     custformdata.append('emp_id_fk', this.add_cid.get('emp_id_fk')?.value)
     custformdata.append('admin_id_fk', this.add_cid.get('admin_id_fk')?.value)
     this.api.post_customerregistration(custformdata).subscribe(
@@ -117,6 +118,15 @@ export class CustomerRegistrationComponent implements OnInit {
        this.img_url = reader.result;
      }
      reader.readAsDataURL(file[0]);
+   }
+   ngDistrictcal( event:any){
+    this.add_cid.get('district')?.setValue
+   }
+   ngStatecal(event:any){
+    this.add_cid.get('State')?.setValue
+   }
+   ngDocument(event:any){
+    this.add_cid.get('cust_document_type')?.setValue
    }
   cust(){
     this.router.navigate(['/adminhome/customer'])

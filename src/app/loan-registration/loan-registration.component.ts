@@ -21,7 +21,7 @@ export class LoanRegistrationComponent implements OnInit {
 ngOnInit(): void {
   this.loan_form=this.fb.group({
     loan_id:[''],
-    // cust_name:['',Validators.required],
+    cust_name:['',Validators.required],
     loan_amount:['',Validators.required],
     loan_no:['',Validators.required],
     loan_duration:['',Validators.required],
@@ -46,7 +46,6 @@ onsubmit(){
   console.log(this.loan_form.value)
 alert('okk')
   const loanformdata=new FormData()
- 
   loanformdata.append('cust_name',this.loan_form.get('cust_name')?.value)
   loanformdata.append('loan_amount',this.loan_form.get('loan_amount')?.value)
   loanformdata.append('loan_no',this.loan_form.get('loan_no')?.value)

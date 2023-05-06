@@ -29,6 +29,7 @@ export class EmployeeRegistrationComponent implements OnInit {
     'Voter'
     
   ]
+  
   hide=true;
   
   eid:number=0;
