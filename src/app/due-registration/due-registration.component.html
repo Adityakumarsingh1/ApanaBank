@@ -36,6 +36,11 @@
       
     </form>
 
+    <div class="datePicker">
+      <mat-label style="margin-left: 4px; line-height: normal;">Date </mat-label> 
+      <input matInput type="date" style="line-height: 50px; font-size: 20px;" formControlName="loan_date" class="example-right-align">
+    </div>
+
     <span>
       <button mat-raised-button style="background: red;">Reset</button>
       <button mat-raised-button style="background: green;"(click)="onsubmit">Submit</button>
