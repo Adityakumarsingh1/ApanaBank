@@ -9,8 +9,28 @@ import { ApiService } from '../api.service';
   styleUrls: ['./employee-registration.component.css']
 })
 export class EmployeeRegistrationComponent implements OnInit {
- hide=true;
-   
+  states: string[] = [
+    'Bihar',
+    'Jharkhand',
+  ]
+  district: string[] =[
+    'Vaishali',
+    'Samastipur',
+    'Begusarai',
+    'Muzaffarpur',
+    'Patna',
+    'Darbhanga',
+    'chapara'
+  ]
+  document_type: string[] = [
+    'Addhar',
+    'PAN',
+    'Driving licence',
+    'Voter'
+    
+  ]
+  hide=true;
+  
   eid:number=0;
   employee_registration: any;
   img_local_url ='http://localhost/upload/';

@@ -19,8 +19,8 @@
       </mat-form-field> -->
 
       <mat-form-field appearance="fill">
-      <mat-label>Amount</mat-label>
-      <input formControlName="loan_amount" matInput placeholder="Amount">
+        <mat-label>Amount</mat-label>
+        <input formControlName="loan_amount" matInput placeholder="Amount">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -28,9 +28,9 @@
       <input formControlName="loan_no" matInput placeholder="loan no ">
       </mat-form-field>
 
-          <mat-form-field appearance="fill">
-          <mat-label>Duration</mat-label>
-          <mat-select  (valueChange)="onDurationCalc($event)" formControlName="loan_duration">
+      <mat-form-field appearance="fill">
+        <mat-label>Duration</mat-label>
+        <mat-select  (valueChange)="onDurationCalc($event)" >
           <mat-option  value="3">3 Months</mat-option>
           <mat-option  value="6">6 Months</mat-option>
           <mat-option  value="9">9 Months</mat-option>

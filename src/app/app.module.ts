@@ -71,17 +71,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
-
-
-
-
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

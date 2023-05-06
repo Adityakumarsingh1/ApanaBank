@@ -46,7 +46,6 @@ onsubmit(){
   console.log(this.loan_form.value)
 alert('okk')
   const loanformdata=new FormData()
- 
   loanformdata.append('cust_name',this.loan_form.get('cust_name')?.value)
   loanformdata.append('loan_amount',this.loan_form.get('loan_amount')?.value)
   loanformdata.append('loan_no',this.loan_form.get('loan_no')?.value)
